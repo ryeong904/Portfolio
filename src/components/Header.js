@@ -29,14 +29,15 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  // width: 1000px;
 `;
 
 const Logo = styled.a`
-  display: flex;
-  width: 300px;
+  justify-self: start;
   font-size: 2rem;
   font-weight: 700;
-  ju
+  border: 1px solid green;
+  margin-right: auto;
 `;
 
 const Header = styled.header`
