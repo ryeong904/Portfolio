@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ReactFullpage from '@fullpage/react-fullpage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const Fullpage = () => {};
+
 root.render(
   <React.StrictMode>
     <App />
