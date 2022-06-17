@@ -43,7 +43,6 @@ const Logo = styled.a`
 `;
 
 const Header = styled.header`
-  height: 4.5rem;
   border: 1px solid red;
 
   & a {
