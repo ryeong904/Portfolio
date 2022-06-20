@@ -4,20 +4,17 @@ export function HeaderTag() {
   return (
     <Header>
       <Wrapper>
-        <Logo href='#'>HR's Portfolio</Logo>
+        <Logo href="/">HR's Portfolio</Logo>
         <Nav>
           <ul>
             <li>
-              <a href='#'>Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href='#'>About me</a>
+              <a href="#skills">Skills</a>
             </li>
             <li>
-              <a href='#'>Skills</a>
-            </li>
-            <li>
-              <a href='#'>Project</a>
+              <a href="#project">Project</a>
             </li>
           </ul>
         </Nav>
@@ -38,21 +35,27 @@ const Logo = styled.a`
   justify-self: start;
   font-size: 2rem;
   font-weight: 700;
-  margin-left: 120px;
-  margin-right: 400px;
+  // margin-left: 120px;
+  margin-right: 500px;
 `;
 
 const Header = styled.header`
-  border: 1px solid red;
-
+  // border-bottom: 1px solid black;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  opacity: 0.9;
   & a {
     color: black;
+    // color: white;
     text-decoration: none;
   }
 `;
 
 const Nav = styled.nav`
-  margin-right: 120px;
+  // margin-right: 120px;
   ul {
     display: flex;
     justify-content: center;
@@ -77,5 +80,11 @@ const Nav = styled.nav`
     text-decoration: none;
     // font-weight: 600;
     font-size: 17px;
+    // color: white;
+    transition: all 0.3s;
+  }
+
+  ul li a:hover {
+    opacity: 1;
   }
 `;

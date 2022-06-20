@@ -9,7 +9,7 @@ export function Home() {
         <p>내용내용 내용내용 내용내용 내용내용 내용내용. </p>
         <p>내용내용 내용내용 내용내용 내용내용 내용내용. </p>
       </div>
-      <img src='image/image.jpeg'></img>
+      <img src="image/image.PNG"></img>
     </Main>
   );
 }
@@ -17,9 +17,11 @@ export function Home() {
 const Main = styled.div`
   width: 100%;
   display: flex;
+  min-height: 600px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 80px;
 
   div {
     margin-right: 160px;
@@ -33,5 +35,9 @@ const Main = styled.div`
   div p {
     margin: 10px 0;
     font-size: 1.1rem;
+  }
+
+  img {
+    border-radius: 50%;
   }
 `;
