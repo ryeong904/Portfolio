@@ -7,40 +7,15 @@ import { Skills } from './components/Skills';
 import { Footer } from './components/Footer';
 import styled from 'styled-components';
 import { FullPage, Slide } from 'react-full-page';
-// function App() {
-//   return (
-//     <FullPage>
-//       <HeaderTag></HeaderTag>
-//       <Slide>
-//         <Container>
-//           <Home></Home>
-//           <DownButton />
-//         </Container>
-//       </Slide>
-//       <Slide>
-//         <Container>
-//           <Skills></Skills>
-//         </Container>
-//       </Slide>
-//       <Slide>
-//         <Container>
-//           <Project></Project>
-//         </Container>
-//       </Slide>
-//       <Slide>
-//         <Footer></Footer>
-//       </Slide>
-//     </FullPage>
-//   );
-// }
+
 function App() {
   return (
     <div>
       <HeaderTag></HeaderTag>
-      <Container>
+      <HomeContainer>
         <Home></Home>
         <DownButton />
-      </Container>
+      </HomeContainer>
       <Container>
         <Skills></Skills>
       </Container>
@@ -52,12 +27,18 @@ function App() {
   );
 }
 
-const Container = styled.div`
+const HomeContainer = styled.div`
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 80px;
-  // background-color: #03141e;
-  // color: #dff6ff;
+  // background-color: #202024;
+  // color: white;
+  // scroll-behavior: smooth;
+`;
+
+const Container = styled.div`
+  height: 100vh;
+  margin: 0 auto;
 `;
 
 export default App;

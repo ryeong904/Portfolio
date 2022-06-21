@@ -20,8 +20,7 @@ const ScrollComponent = styled.div`
     width: 130px;
     height: 40px;
     padding: 10px 25px;
-    border: 2px solid #000;
-    font-family: 'Lato', sans-serif;
+    border: 1px solid #333333;
     font-weight: 500;
     background: transparent;
     cursor: pointer;
