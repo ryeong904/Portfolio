@@ -4,7 +4,14 @@ export function DownButton() {
   return (
     <ScrollComponent>
       <div>
-        <button>더 알아보기</button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = '#skills';
+          }}
+        >
+          더 알아보기
+        </button>
       </div>
     </ScrollComponent>
   );

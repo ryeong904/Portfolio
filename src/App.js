@@ -10,7 +10,7 @@ import { FullPage, Slide } from 'react-full-page';
 
 function App() {
   return (
-    <div>
+    <Scroll>
       <HeaderTag></HeaderTag>
       <HomeContainer>
         <Home></Home>
@@ -23,9 +23,13 @@ function App() {
         <Project></Project>
       </Container>
       <Footer></Footer>
-    </div>
+    </Scroll>
   );
 }
+
+const Scroll = styled.div`
+  scroll-behavior: smooth;
+`;
 
 const HomeContainer = styled.div`
   height: 100vh;

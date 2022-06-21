@@ -31,13 +31,25 @@ const Main = styled.div`
   div h1 {
     margin: 0;
     font-size: 4.5rem;
+    animation: fadeInUp 1s;
   }
 
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 20%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
   div p {
     margin: 10px 0;
     font-size: 1.3rem;
     color: #333333;
     // color: white;
+    animation: fadeInUp 1s;
   }
 
   div p:first-of-type {
@@ -48,5 +60,6 @@ const Main = styled.div`
     border-radius: 50%;
     width: 26em;
     margin-left: 100px;
+    animation: fadeInUp 1s;
   }
 `;
