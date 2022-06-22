@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export function Home() {
   return (
-    <Main>
+    <Main id="home" style={{ marginTop: -90, paddingTop: 90 }}>
       <img src="image/image.PNG" alt="character_image"></img>
       <div>
         <h1>안녕하세요!</h1>
@@ -22,10 +22,12 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 80px;
+  color: #dbdbdb;
 
   div {
     margin-right: 160px;
     margin-left: 50px;
+    vertical-ailgn: center;
   }
 
   div h1 {
@@ -46,8 +48,10 @@ const Main = styled.div`
   }
   div p {
     margin: 10px 0;
-    font-size: 1.3rem;
-    color: #333333;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #dbdbdb;
+    // color: #333333;
     // color: white;
     animation: fadeInUp 1s;
   }
