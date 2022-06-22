@@ -15,14 +15,17 @@ export function Home() {
 }
 
 const Main = styled.div`
-  width: 100%;
+  width: 75%;
   display: flex;
   min-height: 600px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
-  color: #dbdbdb;
+  margin: 0 auto;
+  // color: #dbdbdb;
+  color: #333333;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   div {
     margin-right: 160px;
@@ -32,6 +35,7 @@ const Main = styled.div`
 
   div h1 {
     margin: 0;
+    margin-top: 150px;
     font-size: 4.5rem;
     animation: fadeInUp 1s;
   }
@@ -50,8 +54,8 @@ const Main = styled.div`
     margin: 10px 0;
     font-size: 1.5rem;
     font-weight: 500;
-    color: #dbdbdb;
-    // color: #333333;
+    // color: #dbdbdb;
+    color: #333333;
     // color: white;
     animation: fadeInUp 1s;
   }

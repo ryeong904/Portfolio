@@ -6,7 +6,6 @@ import { Project } from './components/Project';
 import { Skills } from './components/Skills';
 import { Footer } from './components/Footer';
 import styled from 'styled-components';
-import { FullPage, Slide } from 'react-full-page';
 
 function App() {
   return (
@@ -35,7 +34,7 @@ const HomeContainer = styled.div`
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 80px;
-  // background-color: #202024;
+  background-color: #202024;
   // color: white;
   // scroll-behavior: smooth;
 `;
