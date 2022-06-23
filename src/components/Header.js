@@ -8,13 +8,13 @@ export function HeaderTag() {
         <Nav>
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <a href="#home">HOME</a>
             </li>
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#skills">SKILLS</a>
             </li>
             <li>
-              <a href="#project">Project</a>
+              <a href="#project">PROJECT</a>
             </li>
           </ul>
         </Nav>

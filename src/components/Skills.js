@@ -10,6 +10,8 @@ export function Skills() {
             <p>HTML</p>
             <p>CSS</p>
             <p>JavaScript</p>
+            <p>jQuery</p>
+            <p>React</p>
           </div>
         </Content>
         <Content>
@@ -19,19 +21,29 @@ export function Skills() {
             <p>Python</p>
             <p>Express.js</p>
             <p>PHP</p>
+            <p>FastAPI</p>
           </div>
         </Content>
         <Content>
           <h2>DB</h2>
-          <div></div>
+          <div>
+            <p>MySQL</p>
+            <p>MongoDB</p>
+          </div>
         </Content>
         <Content>
           <h2>Mobile</h2>
-          <div></div>
+          <div>
+            <p>Java</p>
+            <p>Android</p>
+          </div>
         </Content>
         <Content>
           <h2>Version Control</h2>
-          <div></div>
+          <div>
+            <p>Git</p>
+            <p>GitLab</p>
+          </div>
         </Content>
       </section>
     </Main>
@@ -39,27 +51,39 @@ export function Skills() {
 }
 
 const Content = styled.div`
+  border-bottom: 1px solid #333333;
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
   div {
-    width: 140px;
-    height: 400px;
-    // border: 1px solid #333333;
+    width: 75%;
+    min-width: 75px;
     background-color: white;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   div p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 300;
-  }
+    background-color: #ededed;
+    margin: 0px 10px 10px 0px;
 
-  div p:first-of-type {
-    padding-top: 20px;
+    padding: 5px;
+    border-radius: 10%;
   }
 
   h2 {
-    text-align: center;
-    font-weight: 200;
-    font-size: 1.3rem;
+    // text-align: center;
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin: 10px 0;
   }
 `;
 
@@ -69,35 +93,30 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
-  animation: fadeInUp 1s;
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translate3d(0, 20%, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translateZ(0);
-    }
-  }
+  width: 75%;
+  background-color: white;
+  margin: 0 auto;
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 600;
     margin-bottom: 10px;
+    // color: #333333;
   }
   svg {
     width: 40px;
   }
   section {
-    width: 1000px;
-    height: 650px;
-    // border: 1px solid black;
-    background-color: #ededed;
+    width: 55%;
+    // border-radius: 2%;
+    // height: 500px;
+    // border: 1px solid #d6d6d6;
+    // border: 1px solid #333333;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 `;

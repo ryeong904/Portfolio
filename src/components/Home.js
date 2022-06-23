@@ -23,7 +23,7 @@ const Main = styled.div`
   align-items: center;
   margin: 0 auto;
   // color: #dbdbdb;
-  color: #333333;
+  // color: #333333;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 

@@ -41,7 +41,8 @@ const HomeContainer = styled.div`
 
 const Container = styled.div`
   height: 100vh;
-  margin: 0 auto;
+  // margin: 0 auto;
+  background-color: #202024;
 `;
 
 export default App;
