@@ -1,20 +1,21 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export function HeaderTag() {
   return (
     <Header>
       <Wrapper>
-        <Logo href="/">HR's Portfolio</Logo>
+        {/* <Logo href='/'>HR's</Logo> */}
         <Nav>
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <Link to='/'>Home</Link>
             </li>
             <li>
-              <a href="#skills">Skills</a>
+              <Link to='/skills'>Skills</Link>
             </li>
             <li>
-              <a href="#project">Project</a>
+              <Link to='/project'>Project</Link>
             </li>
           </ul>
         </Nav>
@@ -27,35 +28,35 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 `;
 
 const Logo = styled.a`
   justify-self: start;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 400;
   // margin-left: 120px;
   margin-right: 500px;
+  color: white;
 `;
 
 const Header = styled.header`
   // border-bottom: 1px solid black;
   position: fixed;
-  background-color: white;
+  // background-color: white;
+  color: white;
   width: 100%;
-  height: 5rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  opacity: 0.9;
+  height: 70px;
+  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  // opacity: 1;
   & a {
-    color: black;
-    // color: white;
     text-decoration: none;
   }
 `;
 
 const Nav = styled.nav`
-  // margin-right: 120px;
+  margin-right: 70px;
   ul {
     display: flex;
     justify-content: center;
@@ -69,6 +70,7 @@ const Nav = styled.nav`
     float: left;
     list-style-type: none;
     text-align: center;
+    text-shadow: 1px 1px 2px black;
   }
 
   ul li:not(:first-of-type) {
@@ -76,15 +78,14 @@ const Nav = styled.nav`
   }
 
   ul li a {
-    color: black;
     text-decoration: none;
-    // font-weight: 600;
     font-size: 17px;
-    // color: white;
+    font-weight: 700;
     transition: all 0.3s;
+    color: white;
   }
 
   ul li a:hover {
-    opacity: 1;
+    color: #dae01f;
   }
 `;
