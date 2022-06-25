@@ -6,43 +6,58 @@ import { Project } from './components/Project';
 import { Skills } from './components/Skills';
 import { Footer } from './components/Footer';
 import styled from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Scroll>
+    <BrowserRouter>
       <HeaderTag></HeaderTag>
-      <HomeContainer>
+
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <HomeContainer>
+              <Home></Home>
+            </HomeContainer>
+          }
+        ></Route>
+        <Route
+          path='/skills'
+          element={
+            <HomeContainer>
+              <Skills></Skills>
+            </HomeContainer>
+          }
+        ></Route>
+        <Route
+          path='/project'
+          element={
+            <HomeContainer>
+              <Project></Project>
+            </HomeContainer>
+          }
+        ></Route>
+      </Routes>
+      {/* <Container>
         <Home></Home>
         <DownButton />
-      </HomeContainer>
+      </Container>
       <Container>
         <Skills></Skills>
       </Container>
       <Container>
         <Project></Project>
       </Container>
-      <Footer></Footer>
-    </Scroll>
+      <Footer></Footer> */}
+    </BrowserRouter>
   );
 }
 
-const Scroll = styled.div`
-  scroll-behavior: smooth;
-`;
-
 const HomeContainer = styled.div`
   height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 80px;
-  background-color: #202024;
-  // color: white;
-  // scroll-behavior: smooth;
-`;
-
-const Container = styled.div`
-  height: 100vh;
-  // margin: 0 auto;
-  background-color: #202024;
+  background-image: url('image/background.jpg');
+  background-size: cover;
 `;
 
 export default App;
