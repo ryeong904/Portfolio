@@ -15,7 +15,7 @@ function App() {
 
       <Routes>
         <Route
-          path='/'
+          path="/"
           element={
             <HomeContainer>
               <Home></Home>
@@ -23,7 +23,7 @@ function App() {
           }
         ></Route>
         <Route
-          path='/skills'
+          path="/skills"
           element={
             <HomeContainer>
               <Skills></Skills>
@@ -31,7 +31,7 @@ function App() {
           }
         ></Route>
         <Route
-          path='/project'
+          path="/project"
           element={
             <HomeContainer>
               <Project></Project>
@@ -39,17 +39,6 @@ function App() {
           }
         ></Route>
       </Routes>
-      {/* <Container>
-        <Home></Home>
-        <DownButton />
-      </Container>
-      <Container>
-        <Skills></Skills>
-      </Container>
-      <Container>
-        <Project></Project>
-      </Container>
-      <Footer></Footer> */}
     </BrowserRouter>
   );
 }
