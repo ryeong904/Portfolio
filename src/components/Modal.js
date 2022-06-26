@@ -1,26 +1,23 @@
 import styled from 'styled-components';
 
-export function Modal() {
+export function Modal({ props }) {
   const clickHanlder = () => {
     document.getElementById('modal').style.opacity = 0;
     document.getElementById('modal').style.transform = 'scale(0.9)';
     document.getElementById('modal').style.zIndex = 0;
   };
+
+  function list(array) {
+    return array.map((e) => <li key={e}>{e}</li>);
+  }
   return (
     <MyModal id="modal">
       <XButton onClick={clickHanlder}>&times;</XButton>
-      <img src="image/portfolio.png"></img>
-      <div>
-        It is a long established fact that a reader will be distracted by the
-        readable content of a page when looking at its layout. The point of
-        using Lorem Ipsum is that it has a more-or-less normal distribution of
-        letters, as opposed to using 'Content here, content here', making it
-        look like readable English. Many desktop publishing packages and web
-        page editors now use Lorem Ipsum as their default model text, and a
-        search for 'lorem ipsum' will uncover many web sites still in their
-        infancy. Various versions have evolved over the years, sometimes by
-        accident, sometimes on purpose (injected humour and the like).
-      </div>
+      <img src={props.url}></img>
+      <h2>{props.title}</h2>
+      <h3>{props.subject}</h3>
+      <ul>{list(props.skills)}</ul>
+      <div>{props.detail.description}</div>
     </MyModal>
   );
 }

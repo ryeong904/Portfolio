@@ -1,0 +1,45 @@
+[
+    {
+        "title": "Collector's",
+        "subject": "쇼핑몰 사이트",
+        "skills": ["HTML", "CSS", "Javascript", "Node.js", "Express.js", "MongoDB"],
+        "detail":{
+            "role": "Backend",
+            "work": ["유저 및 상품 관련 API 개발", "소셜 로그인 구현", "관리자 미들웨어 구현", "VM를 이용한 배포"],
+            "description": "4명으로 구성된 팀에서 마블의 '능력'을 파는 쇼핑몰을 제작하였습니다. 저는 백엔드 담당으로 주로 API를 개발하였으며, API의 테스트를 위해 포스트맨을 사용하였습니다. 어떻게해야 프론트엔드 개발자분들이 편하게 API를 사용할 수 있을지 스스로 고민하게 되었습니다. 처음으로 다른 사람들과 제대로된 협업을 한 경험이었으며, Git을 사용하는 법에 대해서 자세히 배울 수 있었습니다. 프로젝트를 진행하면서 겪었던 문제는 소통을 통해 해결하면서 커뮤니케이션의 중요성을 다시 한 번 깨달을 수 있었습니다."
+        },
+        "url": "image/collectors.gif"
+    },
+    {
+        "title": "하루기록 다이어리",
+        "subject": "일기장 사이트",
+        "skills": ["HTML", "CSS", "Javascript", "PHP"],
+        "detail":{
+            "work": ["회원가입/로그인", "일기와 관련된 CRUD 기능", "이모티콘을 통한 Search 기능", "일정 조건을 만족하면 얻을 수 있는 뱃지 구현"],
+            "description": "달력과 리스트 형태가 같이 있는 일기 작성 사이트가 없어 직접 구현을 하게 되었습니다. 이모지를 통해 일기의 날씨와 기분을 표현할 수 있도록 작성했으며, 이를 통해 검색또한 가능하도록 구현했습니다."
+        },
+        "url": "image/diary.gif"
+
+    },    
+    {
+        "title": "Portfolio",
+        "subject": "포트폴리오 사이트",
+        "skills": ["React"],
+        "detail":{
+            "work": ["Github API와 Chart.js를 사용한 데이터 차트화", "react-router-dom을 사용한 페이지 구분"],
+            "description": "처음으로 React를 사용하여 개발한 포트폴리오 사이트 입니다. 컴포넌트를 사용해 최대한 중복되는 코드를 줄이기 위해 노력했습니다. 제가 주로 사용한 언어를 표현하기 위해 Github API를 사용해 제 Github 데이터를 가져왔고, 가져온 데이터는 Chart.js 라이브러리를 사용해 이를 시각화 했습니다."
+        },
+        "url": "image/portfolio.PNG"
+
+    },
+    {
+        "title": "스트리밍 데이터 대시보드",
+        "subject": "대시보드 제작",
+        "skills": ["Python", "SQLAlchemy", "MySQL", "FastAPI", "Grafana"],
+        "detail":{
+            "work": ["Fake Data 생성 프로그램 작성", "ORM을 이용한 Database 관리", "웹서버의 데이터 Get API", "Grafana를 이용한 데이터 표현"],
+            "description": "연구소에서 인턴을 진행하면서 제작한 대시보드입니다. 프로젝트를 통해 웹서버에 대해 공부할 수 있었고, 제가 백엔드에 관심을 가지게 된 계기가 되었습니다. "
+        },
+        "url": "image/dashboard.gif"
+    }
+]

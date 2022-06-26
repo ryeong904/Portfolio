@@ -1,9 +1,23 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { Modal } from './Modal';
+import projectList from '../data/projectList.json';
+import { useEffect } from 'react';
 
 export function Project() {
   const [number, setNumber] = useState(0);
+  const [data, setData] = useState(projectList[number]);
+
+  useEffect(() => {
+    setData(projectList[number]);
+  }, [number]);
+
+  const clickHandler = (num) => {
+    setNumber(num);
+    document.getElementById('modal').style.opacity = 1;
+    document.getElementById('modal').style.transform = 'scale(1)';
+    document.getElementById('modal').style.zIndex = 2;
+  };
   return (
     <Main>
       <h1>Projects</h1>
@@ -11,25 +25,35 @@ export function Project() {
         <Content
           style={{ backgroundColor: '#333333' }}
           onClick={() => {
-            document.getElementById('modal').style.opacity = 1;
-            document.getElementById('modal').style.transform = 'scale(1)';
-            document.getElementById('modal').style.zIndex = 2;
+            clickHandler(0);
           }}
         >
           <img src="image/logo.png" alt="shoppingmall-gif"></img>
         </Content>
-        <Content></Content>
-        <Content>
+        <Content
+          onClick={() => {
+            clickHandler(1);
+          }}
+        ></Content>
+        <Content
+          onClick={() => {
+            clickHandler(2);
+          }}
+        >
           <img
             style={{ backgroundImage: 'image/dashboard.png' }}
             src="image/dashboard.png"
           ></img>
         </Content>
-        <Content>
+        <Content
+          onClick={() => {
+            clickHandler(3);
+          }}
+        >
           <img src="image/portfolio.PNG"></img>
         </Content>
       </Container>
-      <Modal></Modal>
+      <Modal props={data}></Modal>
     </Main>
   );
 }

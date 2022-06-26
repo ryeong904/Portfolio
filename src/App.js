@@ -1,10 +1,8 @@
 import './App.css';
 import { HeaderTag } from './components/Header';
 import { Home } from './components/Home';
-import { DownButton } from './components/DownButton';
 import { Project } from './components/Project';
 import { Skills } from './components/Skills';
-import { Footer } from './components/Footer';
 import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
