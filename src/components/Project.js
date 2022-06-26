@@ -1,11 +1,100 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import { Modal } from './Modal';
 
 export function Project() {
+  const [number, setNumber] = useState(0);
   return (
-    <div style={{ backgroundColor: 'white' }}>
-      <h1 id="project" style={{ marginTop: -90, paddingTop: 90 }}>
-        Project
-      </h1>
-    </div>
+    <Main>
+      <h1>Projects</h1>
+      <Container>
+        <Content
+          style={{ backgroundColor: '#333333' }}
+          onClick={() => {
+            document.getElementById('modal').style.opacity = 1;
+            document.getElementById('modal').style.transform = 'scale(1)';
+            document.getElementById('modal').style.zIndex = 2;
+          }}
+        >
+          <img src="image/logo.png" alt="shoppingmall-gif"></img>
+        </Content>
+        <Content></Content>
+        <Content>
+          <img
+            style={{ backgroundImage: 'image/dashboard.png' }}
+            src="image/dashboard.png"
+          ></img>
+        </Content>
+        <Content>
+          <img src="image/portfolio.PNG"></img>
+        </Content>
+      </Container>
+      <Modal></Modal>
+    </Main>
   );
 }
+
+const Main = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.2s;
+  animation: background 0.5s;
+
+  @keyframes background {
+    0% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  & h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 3px 3px 1px black;
+  }
+`;
+
+const Container = styled.div`
+  width: 60%;
+  height: 70%;
+  background-color: rgb(255, 255, 255, 0.2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+  padding: 40px 20px 0px 20px;
+  overflow: auto;
+  z-index: 1;
+`;
+
+const Content = styled.div`
+  width: 350px;
+  height: 300px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+  img {
+    width: 100%;
+  }
+  p {
+    font-size: 39px;
+    border: 1px solid black;
+    padding: 6px 18px;
+  }
+`;

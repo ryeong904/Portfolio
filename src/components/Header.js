@@ -5,17 +5,16 @@ export function HeaderTag() {
   return (
     <Header>
       <Wrapper>
-        {/* <Logo href='/'>HR's</Logo> */}
         <Nav>
           <ul>
             <li>
-              <Link to='/'>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to='/skills'>Skills</Link>
+              <Link to="/skills">Skills</Link>
             </li>
             <li>
-              <Link to='/project'>Project</Link>
+              <Link to="/projects">Projects</Link>
             </li>
           </ul>
         </Nav>
@@ -32,24 +31,12 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.a`
-  justify-self: start;
-  font-size: 2rem;
-  font-weight: 400;
-  // margin-left: 120px;
-  margin-right: 500px;
-  color: white;
-`;
-
 const Header = styled.header`
-  // border-bottom: 1px solid black;
   position: fixed;
-  // background-color: white;
   color: white;
   width: 100%;
   height: 70px;
-  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  // opacity: 1;
+
   & a {
     text-decoration: none;
   }

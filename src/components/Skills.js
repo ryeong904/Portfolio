@@ -48,7 +48,7 @@ export function Skills() {
   const backArray = ['Node.js', 'Express.js', 'PHP', 'FastAPI'];
   const dbArray = ['MySQL', 'MongoDB'];
   const mobileArray = ['Java', 'Android'];
-  const vcsArray = ['GitHub', 'GitLab'];
+  const vcsArray = ['Git', 'GitHub', 'GitLab'];
 
   const [chartData, setChartData] = useState({
     datasets: [
@@ -120,7 +120,7 @@ export function Skills() {
             <div>{list(backArray)}</div>
           </Content>
           <Content>
-            <h2>DataBase</h2>
+            <h2>Database</h2>
             <div>{list(dbArray)}</div>
           </Content>
           <Content>
@@ -133,8 +133,7 @@ export function Skills() {
           </Content>
         </div>
         <div>
-          <h2>The Programming Language</h2>
-
+          <h2>Programming Language</h2>
           {flag ? (
             <Doughnut
               data={chartData}
@@ -164,7 +163,7 @@ const Content = styled.div`
     text-align: center;
     display: flex;
     // flex-direction: row;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   div p {
@@ -172,8 +171,11 @@ const Content = styled.div`
     font-weight: 400;
     color: black;
     background-color: rgb(255, 255, 255, 0.8);
+    // background-color: #30a1ed;
+    // color: white;
     margin: 0px 10px 10px 0px;
-    padding: 5px;
+    padding: 5px 12px;
+    border-radius: 25rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -227,7 +229,7 @@ const Main = styled.div`
 
   section {
     width: 800px;
-    height: 530px;
+    height: 60%;
     background-color: rgb(255, 255, 255, 0.2);
     display: flex;
     justify-content: center;

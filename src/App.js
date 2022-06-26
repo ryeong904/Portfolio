@@ -12,7 +12,6 @@ function App() {
   return (
     <BrowserRouter>
       <HeaderTag></HeaderTag>
-
       <Routes>
         <Route
           path="/"
@@ -31,7 +30,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/project"
+          path="/projects"
           element={
             <HomeContainer>
               <Project></Project>
