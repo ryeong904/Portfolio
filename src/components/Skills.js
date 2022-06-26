@@ -120,7 +120,7 @@ export function Skills() {
             <div>{list(backArray)}</div>
           </Content>
           <Content>
-            <h2>DB</h2>
+            <h2>DataBase</h2>
             <div>{list(dbArray)}</div>
           </Content>
           <Content>
@@ -132,24 +132,26 @@ export function Skills() {
             <div>{list(vcsArray)}</div>
           </Content>
         </div>
-        {flag ? (
-          <Doughnut
-            data={chartData}
-            width="300px"
-            height="300px"
-            display="inline"
-            options={options}
-          />
-        ) : (
-          <div>Loading ...</div>
-        )}
+        <div>
+          <h2>The Programming Language</h2>
+
+          {flag ? (
+            <Doughnut
+              data={chartData}
+              width="300px"
+              height="300px"
+              options={options}
+            />
+          ) : (
+            <div>Loading ...</div>
+          )}
+        </div>
       </section>
     </Main>
   );
 }
 
 const Content = styled.div`
-  border-bottom: 1px solid #333333;
   display: flex;
   width: 80%;
   flex-direction: column;
@@ -161,23 +163,28 @@ const Content = styled.div`
     min-width: 75px;
     text-align: center;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    // flex-direction: row;
+    // flex-wrap: wrap;
   }
 
   div p {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 400;
-    background-color: #ededed;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.8);
     margin: 0px 10px 10px 0px;
     padding: 5px;
-    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 
   h2 {
-    font-weight: 500;
-    font-size: 1.4rem;
+    font-weight: 400;
+    font-size: 1.3rem;
     margin: 10px 0;
+    text-shadow: 1px 1px 2px #a1a1a1;
+    // text-align: center;
   }
 `;
 
@@ -205,7 +212,7 @@ const Main = styled.div`
   h1 {
     font-size: 2.7rem;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: white;
     text-shadow: 3px 3px 1px black;
   }
@@ -215,11 +222,12 @@ const Main = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 45%;
   }
 
   section {
     width: 800px;
+    height: 530px;
     background-color: rgb(255, 255, 255, 0.2);
     display: flex;
     justify-content: center;
@@ -231,5 +239,12 @@ const Main = styled.div`
 
   section > canvas {
     margin-right: 20px;
+  }
+
+  section > div > h2 {
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px #a1a1a1;
   }
 `;
