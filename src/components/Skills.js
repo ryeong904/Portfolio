@@ -137,8 +137,8 @@ export function Skills() {
           {flag ? (
             <Doughnut
               data={chartData}
-              width="300px"
-              height="300px"
+              width='300px'
+              height='300px'
               options={options}
             />
           ) : (
@@ -171,8 +171,6 @@ const Content = styled.div`
     font-weight: 400;
     color: black;
     background-color: rgb(255, 255, 255, 0.8);
-    // background-color: #30a1ed;
-    // color: white;
     margin: 0px 10px 10px 0px;
     padding: 5px 12px;
     border-radius: 25rem;
@@ -229,7 +227,7 @@ const Main = styled.div`
 
   section {
     width: 800px;
-    height: 60%;
+    height: 70%;
     background-color: rgb(255, 255, 255, 0.2);
     display: flex;
     justify-content: center;
