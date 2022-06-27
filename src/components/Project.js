@@ -28,28 +28,28 @@ export function Project() {
             clickHandler(0);
           }}
         >
-          <img src='image/logo.png' alt='shoppingmall-logo-image'></img>
+          <img src="image/logo.png" alt="shoppingmall-logo-image"></img>
         </Content>
         <Content
           onClick={() => {
             clickHandler(1);
           }}
         >
-          <img src='image/diary.png' alt='diary-main-image'></img>
+          <img src="image/diary.png" alt="diary-main-image"></img>
         </Content>
         <Content
           onClick={() => {
             clickHandler(2);
           }}
         >
-          <img src='image/portfolio.png' alt='portfolio-main-image'></img>
+          <img src="image/portfolio-s.png" alt="portfolio-main-image"></img>
         </Content>
         <Content
           onClick={() => {
             clickHandler(3);
           }}
         >
-          <img src='image/dashboard.PNG' alt='dashboard-main-image'></img>
+          <img src="image/dashboard.PNG" alt="dashboard-main-image"></img>
         </Content>
       </Container>
       <Modal props={data}></Modal>
@@ -91,16 +91,17 @@ const Container = styled.div`
   background-color: rgb(255, 255, 255, 0.2);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   gap: 20px;
   justify-items: center;
-  padding: 40px 20px 40px 20px;
+  padding: 30px;
   overflow: auto;
   z-index: 1;
 `;
 
 const Content = styled.div`
   width: 100%;
-  height: 200px;
+  height: 240px;
   cursor: pointer;
   background-color: white;
   transition: all 0.3s;
