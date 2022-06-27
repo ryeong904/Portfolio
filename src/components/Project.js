@@ -49,7 +49,7 @@ export function Project() {
             clickHandler(3);
           }}
         >
-          <img src="image/dashboard.PNG" alt="dashboard-main-image"></img>
+          <img src="image/dashboard.png" alt="dashboard-main-image"></img>
         </Content>
       </Container>
       <Modal props={data}></Modal>
