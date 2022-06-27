@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export function Modal({ props }) {
+  console.log(props);
   const clickHanlder = () => {
     document.getElementById('modal').style.opacity = 0;
     document.getElementById('modal').style.transform = 'scale(0.9)';
@@ -16,8 +17,14 @@ export function Modal({ props }) {
       <img src={props.url}></img>
       <h2>{props.title}</h2>
       <h3>{props.subject}</h3>
-      <ul>{list(props.skills)}</ul>
-      <div>{props.detail.description}</div>
+      <hr></hr>
+      <ul className="skill">{list(props.skills)}</ul>
+      {props.detail.work ? (
+        <ul className="work">주요 개발{list(props.detail.work)}</ul>
+      ) : (
+        ''
+      )}
+      <p>{props.detail.description}</p>
     </MyModal>
   );
 }
@@ -37,7 +44,6 @@ const XButton = styled.span`
 
 const MyModal = styled.div`
   padding: 30px;
-  //   display: none;
   width: 700px;
   height: 70%;
   background-color: white;
@@ -52,13 +58,50 @@ const MyModal = styled.div`
   opacity: 0;
 
   h2 {
-    font-size: 39px;
-    margin: 0;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    margin: 10px 0;
+    color: #545454;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    padding: 0;
+    margin: 10px 0;
+    list-style: none;
+    display: flex;
+    vertical-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .skill > li {
+    border: 1px solid #333333;
+    color: #333333;
+    padding: 6px 8px;
+    border-radius: 10rem;
+  }
+
+  .work {
+    display: block;
+    list-style: disc;
+  }
+
+  .work > li {
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+
+  ul > li {
+    margin: 0 3px;
   }
 
   & > img {
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
   }
 `;

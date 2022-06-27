@@ -4,6 +4,7 @@ import { Home } from './components/Home';
 import { Project } from './components/Project';
 import { Skills } from './components/Skills';
 import styled from 'styled-components';
+import { Footer } from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           }
         ></Route>
       </Routes>
+      <Footer></Footer>
     </BrowserRouter>
   );
 }

@@ -28,29 +28,28 @@ export function Project() {
             clickHandler(0);
           }}
         >
-          <img src="image/logo.png" alt="shoppingmall-gif"></img>
+          <img src="image/logo.png" alt="shoppingmall-logo-image"></img>
         </Content>
         <Content
           onClick={() => {
             clickHandler(1);
           }}
-        ></Content>
+        >
+          <img src="image/diary.png" alt="diary-main-image"></img>
+        </Content>
         <Content
           onClick={() => {
             clickHandler(2);
           }}
         >
-          <img
-            style={{ backgroundImage: 'image/dashboard.png' }}
-            src="image/dashboard.png"
-          ></img>
+          <img src="image/portfolio.png" alt="portfolio-main-image"></img>
         </Content>
         <Content
           onClick={() => {
             clickHandler(3);
           }}
         >
-          <img src="image/portfolio.PNG"></img>
+          <img src="image/dashboard.PNG"></img>
         </Content>
       </Container>
       <Modal props={data}></Modal>
