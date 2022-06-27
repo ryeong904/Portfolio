@@ -35,14 +35,14 @@ export function Project() {
             clickHandler(1);
           }}
         >
-          <img src="image/diary.png" alt="diary-main-image"></img>
+          <img src="image/diary.PNG" alt="diary-main-image"></img>
         </Content>
         <Content
           onClick={() => {
             clickHandler(2);
           }}
         >
-          <img src="image/portfolio-s.png" alt="portfolio-main-image"></img>
+          <img src="image/portfolio-s.PNG" alt="portfolio-main-image"></img>
         </Content>
         <Content
           onClick={() => {
