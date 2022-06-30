@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Modal } from './Modal';
 import projectList from '../data/projectList.json';
 import { useEffect } from 'react';
+import { Title } from './Title';
 
 export function Project() {
   const [number, setNumber] = useState(0);
@@ -20,7 +21,7 @@ export function Project() {
   };
   return (
     <Main>
-      <h1>Projects</h1>
+      <Title title={'Projects'}></Title>
       <Container>
         <Content
           style={{ backgroundColor: '#333333' }}
@@ -75,18 +76,10 @@ const Main = styled.div`
       opacity: 1;
     }
   }
-
-  & h1 {
-    font-size: 2.7rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: white;
-    text-shadow: 3px 3px 1px black;
-  }
 `;
 
 const Container = styled.div`
-  width: 50%;
+  width: 800px;
   height: 60%;
   background-color: rgb(255, 255, 255, 0.2);
   display: grid;
@@ -110,6 +103,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
 
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   &:hover {
     transform: scale(1.03);
   }

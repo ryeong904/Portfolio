@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
+import { Title } from './Title';
 import { useState, useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -108,7 +109,7 @@ export function Skills() {
 
   return (
     <Main>
-      <h1>SKILLS</h1>
+      <Title title={'Skills'} />
       <section>
         <div>
           <Content>
@@ -137,8 +138,8 @@ export function Skills() {
           {flag ? (
             <Doughnut
               data={chartData}
-              width='300px'
-              height='300px'
+              width="300px"
+              height="300px"
               options={options}
             />
           ) : (
@@ -162,7 +163,6 @@ const Content = styled.div`
     min-width: 75px;
     text-align: center;
     display: flex;
-    // flex-direction: row;
     flex-wrap: wrap;
   }
 
@@ -184,7 +184,6 @@ const Content = styled.div`
     font-size: 1.3rem;
     margin: 10px 0;
     text-shadow: 1px 1px 2px #a1a1a1;
-    // text-align: center;
   }
 `;
 
@@ -209,14 +208,6 @@ const Main = styled.div`
     }
   }
 
-  h1 {
-    font-size: 2.7rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: white;
-    text-shadow: 3px 3px 1px black;
-  }
-
   section > div {
     display: flex;
     justify-content: space-around;
@@ -227,7 +218,7 @@ const Main = styled.div`
 
   section {
     width: 800px;
-    height: 70%;
+    height: 60%;
     background-color: rgb(255, 255, 255, 0.2);
     display: flex;
     justify-content: center;

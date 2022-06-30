@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export function Modal({ props }) {
-  console.log(props);
   const clickHanlder = () => {
     document.getElementById('modal').style.opacity = 0;
     document.getElementById('modal').style.transform = 'scale(0.9)';
