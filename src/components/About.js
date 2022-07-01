@@ -34,12 +34,6 @@ const Intro = styled.div`
   text-align: center;
 `;
 
-const Interest = styled.div`
-  width: 100%;
-  height: 30%;
-  border: 1px solid red;
-`;
-
 const Main = styled.div`
   display: flex;
   flex-direction: column;
@@ -73,13 +67,14 @@ const Container = styled.div`
   flex-direction: column;
 
   img {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     margin: 20px auto;
     border-radius: 50%;
-    background: gray;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background: #bababa;
+    // border: 5px solid #595959;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   }
 `;
 
