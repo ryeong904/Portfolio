@@ -7,17 +7,14 @@ export function About() {
       <Title title={'About'}></Title>
       <Container>
         <Content>
-          <img src="image/profile.png"></img>
+          <img src='image/profile.png'></img>
           <Intro>
             <h2>웹 풀스택 개발자 김혜령입니다.</h2>
             <p>
               대학교에서 <b>웹 프로그래밍 수업</b>을 들으며 웹 개발자가 되기로
               결심했습니다.
             </p>
-            <p>
-              원하는 것을 만들기 위한 준비물들이 다양하게 준비되어 있다는 느낌을
-              받았거든요.
-            </p>
+            <p>프론트엔드, 백엔드 구분하지 않고 개발하는 것을 좋아합니다.</p>
             <p>
               현재는 엘리스 SW 엔지니어 트랙을 통해 웹 개발자에게 필요한
               지식들을 배우고 있습니다.
@@ -28,7 +25,6 @@ export function About() {
             </p>
           </Intro>
         </Content>
-        {/* <Interest></Interest> */}
       </Container>
     </Main>
   );
@@ -69,7 +65,7 @@ const Main = styled.div`
 
 const Container = styled.div`
   width: 800px;
-  height: 60%;
+  height: 70%;
   background-color: rgb(255, 255, 255, 0.3);
   display: flex;
   justify-content: center;

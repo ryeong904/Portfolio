@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function Modal({ props }) {
   const clickHanlder = () => {
@@ -11,23 +13,43 @@ export function Modal({ props }) {
     return array.map((e) => <li key={e}>{e}</li>);
   }
   return (
-    <MyModal id="modal">
+    <MyModal id='modal'>
       <XButton onClick={clickHanlder}>&times;</XButton>
       <img src={props.url}></img>
-      <h2>{props.title}</h2>
+      <TitleAndIcon>
+        <h2>{props.title}</h2>
+        <a href={props.github} target='_blank'>
+          <FontAwesomeIcon icon={faGithub} size='2x' color='#1f1f1f' />
+        </a>
+      </TitleAndIcon>
       <h3>{props.subject}</h3>
       <hr></hr>
-      <ul className="skill">{list(props.skills)}</ul>
+      <ul className='skill'>{list(props.skills)}</ul>
+      <h4>개발 기간 : {props.date}</h4>
+      <h4>담당 : {props.detail.role}</h4>
       {props.detail.work ? (
-        <ul className="work">주요 개발{list(props.detail.work)}</ul>
+        <ul className='work'>주요 개발{list(props.detail.work)}</ul>
       ) : (
         ''
       )}
-      <p>{props.detail.description}</p>
+      <h4>프로젝트 설명</h4>
+
+      <p className='description'>{list(props.detail.description)}</p>
     </MyModal>
   );
 }
 
+const TitleAndIcon = styled.div`
+  display: flex;
+  align-items: center;
+  h2 {
+    font-size: 40px;
+    margin: 10px 20px 10px 0;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+`;
 const XButton = styled.span`
   position: absolute;
   right: 15px;
@@ -56,15 +78,15 @@ const MyModal = styled.div`
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   opacity: 0;
 
-  h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
-  }
-
   h3 {
     margin: 10px 0;
     color: #545454;
     font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    margin: 20px 0;
   }
 
   ul {
@@ -75,6 +97,13 @@ const MyModal = styled.div`
     vertical-align: center;
     font-size: 1.1rem;
     font-weight: 600;
+  }
+
+  .description > li {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    list-style: none;
   }
 
   .skill > li {
