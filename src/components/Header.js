@@ -11,6 +11,9 @@ export function HeaderTag() {
               <Link to="/">Home</Link>
             </li>
             <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
               <Link to="/skills">Skills</Link>
             </li>
             <li>
@@ -26,9 +29,8 @@ export function HeaderTag() {
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
+  justify-content: center;
+  width: 400px;
 `;
 
 const Header = styled.header`
@@ -36,17 +38,17 @@ const Header = styled.header`
   color: white;
   width: 100%;
   height: 70px;
-
+  display: flex;
+  justify-content: center;
   & a {
     text-decoration: none;
   }
 `;
 
 const Nav = styled.nav`
-  margin-right: 70px;
   ul {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -54,25 +56,23 @@ const Nav = styled.nav`
   }
 
   ul li {
-    float: left;
     list-style-type: none;
-    text-align: center;
     text-shadow: 1px 1px 2px black;
   }
 
-  ul li:not(:first-of-type) {
+  ul li + li {
     margin-left: 40px;
   }
 
   ul li a {
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.18rem;
     font-weight: 700;
     transition: all 0.3s;
     color: white;
   }
 
   ul li a:hover {
-    color: #dae01f;
+    color: #b0b0b0;
   }
 `;

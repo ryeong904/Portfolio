@@ -73,6 +73,7 @@ export function Skills() {
     fetch('https://api.github.com/users/ryeong904/repos')
       .then((res) => res.json())
       .then(async (datas) => {
+        console.log(datas);
         const result = await getLanguageList(datas);
         const temp = result.slice(0, 5);
         const labels = temp.map((e) => e[0]);
