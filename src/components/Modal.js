@@ -2,39 +2,43 @@ import styled from 'styled-components';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+function modalOff() {
+  document.getElementById('modal').style.opacity = 0;
+  document.getElementById('modal').style.transform = 'scale(0.9)';
+  document.getElementById('modal').style.zIndex = 0;
+}
+
 export function Modal({ props }) {
   const clickHanlder = () => {
-    document.getElementById('modal').style.opacity = 0;
-    document.getElementById('modal').style.transform = 'scale(0.9)';
-    document.getElementById('modal').style.zIndex = 0;
+    modalOff();
   };
 
   function list(array) {
     return array.map((e) => <li key={e}>{e}</li>);
   }
   return (
-    <MyModal id='modal'>
+    <MyModal id="modal">
       <XButton onClick={clickHanlder}>&times;</XButton>
       <img src={props.url}></img>
       <TitleAndIcon>
         <h2>{props.title}</h2>
-        <a href={props.github} target='_blank'>
-          <FontAwesomeIcon icon={faGithub} size='2x' color='#1f1f1f' />
+        <a href={props.github} target="_blank">
+          <FontAwesomeIcon icon={faGithub} size="2x" color="#1f1f1f" />
         </a>
       </TitleAndIcon>
       <h3>{props.subject}</h3>
       <hr></hr>
-      <ul className='skill'>{list(props.skills)}</ul>
+      <ul className="skill">{list(props.skills)}</ul>
       <h4>개발 기간 : {props.date}</h4>
       <h4>담당 : {props.detail.role}</h4>
       {props.detail.work ? (
-        <ul className='work'>주요 개발{list(props.detail.work)}</ul>
+        <ul className="work">주요 개발{list(props.detail.work)}</ul>
       ) : (
         ''
       )}
       <h4>프로젝트 설명</h4>
 
-      <p className='description'>{list(props.detail.description)}</p>
+      <p className="description">{list(props.detail.description)}</p>
     </MyModal>
   );
 }

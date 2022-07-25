@@ -24,6 +24,13 @@ export function Project() {
       <Title title={'Projects'}></Title>
       <Container>
         <Content
+          onClick={() => {
+            clickHandler(4);
+          }}
+        >
+          <img src="image/togefit.PNG" alt="togefit-logo-image"></img>
+        </Content>
+        <Content
           style={{ backgroundColor: '#333333' }}
           onClick={() => {
             clickHandler(0);

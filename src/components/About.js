@@ -7,22 +7,18 @@ export function About() {
       <Title title={'About'}></Title>
       <Container>
         <Content>
-          <img src='image/profile.png'></img>
+          <img src="image/profile.png"></img>
           <Intro>
-            <h2>웹 풀스택 개발자 김혜령입니다.</h2>
+            <h2>웹 백엔드 개발자 김혜령입니다.</h2>
             <p>
-              대학교에서 <b>웹 프로그래밍 수업</b>을 들으며 웹 개발자가 되기로
-              결심했습니다.
-            </p>
-            <p>프론트엔드, 백엔드 구분하지 않고 개발하는 것을 좋아합니다.</p>
-            <p>
-              현재는 엘리스 SW 엔지니어 트랙을 통해 웹 개발자에게 필요한
-              지식들을 배우고 있습니다.
+              Database 설계하는 것을 좋아하며, REST API를 제작하는 것에 관심이
+              많습니다.
             </p>
             <p>
-              <b>Node.js</b>와 <b>React.js</b>를 이용한 개발에 집중하고
-              있습니다.
+              주로 Node.js를 사용해 서버 개발을 했으며, 앞으로는 Java Spring을
+              공부할 예정입니다.
             </p>
+            <p>현재는 Docker와 Kubernetes를 공부하고 있습니다.</p>
           </Intro>
         </Content>
       </Container>
@@ -79,9 +75,6 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  // width: 50%;
-  // height: 30%;
   display: grid;
   flex-direction: row;
-  // background-color: white;
 `;

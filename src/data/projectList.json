@@ -85,5 +85,28 @@
     },
     "github": "https://github.com/ryeong904/2020-internship",
     "url": "image/dashboard.gif"
+  },
+  {
+    "title": "Togefit",
+    "subject": "운동, 식단 공유 커뮤니티",
+    "skills": ["React", "Node.js", "Express.js", "MongoDB", "AWS S3", "Docker"],
+    "date": "2022.07.04 ~ 2022.07.24",
+    "detail": {
+      "role": "5명 중 백엔드 담당",
+      "work": [
+        "서버쪽 프로젝트 세팅(TypeScript, MongoDB Atlas, Express.js)",
+        "JWT를 이용한 로그인/로그아웃 API 구현",
+        "운동리스트, 개인 루틴 CRUD API 구현",
+        "Jest를 이용해 기능별 2~3개의 테스트코드 작성",
+        "Docker를 이용한 배포"
+      ],
+      "description": [
+        "운동과 식단 등 건강 관리에 관련된 정보들을 공유할 수 있는 커뮤니티 사이트입니다.",
+        "다른 사람들과 운동과 식단에 대해 기록하고 공유하면서 정보를 얻을 수 있습니다.",
+        "github 잔디와 유사한 글을 기록한 날짜에 대한 체크와 식단 파이 차트를 통해 운동 기록과 식단 관리를 효과적으로 할 수 있습니다."
+      ]
+    },
+    "github": "https://kdt-gitlab.elice.io/sw_track/class_02_seoul/web_project_2/team16/healthcare-community",
+    "url": "image/togefit.gif"
   }
 ]
