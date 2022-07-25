@@ -8,7 +8,7 @@ export function Home() {
     <Main>
       <Content>
         <h1>Kim Hye Ryeong</h1>
-        <p>Hi, I'm a Full Stack Web Developer.</p>
+        <p>Hi, I'm a Web Backend Developer.</p>
       </Content>
       <Icons>
         <a href="https://github.com/ryeong904" target="_blank">
