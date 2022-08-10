@@ -7,7 +7,12 @@ export function Home() {
   return (
     <Main>
       <Content>
-        <h1>Kim Hye Ryeong</h1>
+        <Name>
+          <h1>Kim</h1>
+          <h1>Hye</h1>
+          <h1>Ryeong</h1>
+        </Name>
+        <Line></Line>
         <p>Hi, I'm a Web Backend Developer.</p>
       </Content>
       <Icons>
@@ -25,6 +30,49 @@ export function Home() {
   );
 }
 
+const Name = styled.div`
+  h1 {
+    display: inline;
+    font-size: 6em;
+    margin-bottom: 10px;
+    text-shadow: 4px 3px 0 #28282b;
+    animation: fadeInUp 1s;
+  }
+  h1:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  @media all and (max-width: 850px) {
+    h1 {
+      font-size: 5em;
+    }
+    h1:not(:last-of-type) {
+      margin-right: 15px;
+    }
+  }
+
+  @media all and (max-width: 500px) {
+    h1 {
+      font-size: 4em;
+      display: block;
+      margin: 0;
+    }
+  }
+`;
+
+const Line = styled.div`
+  width: 740px;
+  border-bottom: 2px solid white;
+  margin-top: 10px;
+
+  @media all and (max-width: 850px) {
+    width: 600px;
+  }
+
+  @media all and (max-width: 500px) {
+    width: 300px;
+  }
+`;
 const Icons = styled.div`
   width: 200px;
   display: flex;
@@ -56,15 +104,6 @@ const Content = styled.div`
     animation: fadeInUp 1s;
     font-size: 1.2rem;
     text-shadow: 1px 1px 2px black;
-  }
-
-  h1 {
-    font-size: 6em;
-    margin-bottom: 10px;
-    border-bottom: 2px solid white;
-    padding-bottom: 10px;
-    text-shadow: 4px 3px 0 #28282b;
-    animation: fadeInUp 1s;
   }
 
   @keyframes fadeInUp {

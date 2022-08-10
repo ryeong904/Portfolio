@@ -51,12 +51,31 @@ const Main = styled.div`
   p {
     font-size: 1.1rem;
   }
+  @media all and (max-width: 850px) {
+    p {
+      font-size: 1rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media all and (max-width: 500px) {
+    p {
+      font-size: 0.9rem;
+      font-weight: 400;
+      padding: 0 10px;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const Container = styled.div`
   width: 800px;
   height: 70%;
-  background-color: rgb(255, 255, 255, 0.3);
+  background-color: rgb(255, 255, 255, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,9 +87,23 @@ const Container = styled.div`
     margin: 20px auto;
     border-radius: 50%;
     background: #bababa;
-    // border: 5px solid #595959;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    border: 2px solid gray;
+    box-shadow: rgba(14, 30, 37, 0.4) 0px 2px 4px 0px,
       rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+  @media all and (max-width: 850px) {
+    width: 600px;
+    height: 50%;
+  }
+
+  @media all and (max-width: 500px) {
+    width: 300px;
+    img {
+      width: 170px;
+      height: 170px;
+    }
+    height: 60%;
   }
 `;
 

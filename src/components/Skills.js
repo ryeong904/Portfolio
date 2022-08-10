@@ -139,8 +139,8 @@ export function Skills() {
           {flag ? (
             <Doughnut
               data={chartData}
-              width='300px'
-              height='300px'
+              width="300px"
+              height="300px"
               options={options}
             />
           ) : (
@@ -227,6 +227,13 @@ const Main = styled.div`
     flex-direction: row;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    @media all and (max-width: 850px) {
+      width: 600px;
+    }
+    @media all and (max-width: 500px) {
+      width: 400px;
+    }
   }
 
   section > canvas {

@@ -95,9 +95,11 @@ const MyModal = styled.div`
 
   ul {
     padding: 0;
-    margin: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 0;
     list-style: none;
     display: flex;
+    flex-flow: row wrap;
     vertical-align: center;
     font-size: 1.1rem;
     font-weight: 600;
@@ -115,6 +117,8 @@ const MyModal = styled.div`
     color: #333333;
     padding: 6px 8px;
     border-radius: 10rem;
+    height: 20px;
+    margin: 3px 3px;
   }
 
   .work {
@@ -135,5 +139,13 @@ const MyModal = styled.div`
     width: 80%;
     margin: 20px auto;
     display: block;
+  }
+
+  @media all and (max-width: 500px) {
+    width: 280px;
+
+    h2 {
+      font-size: 2rem;
+    }
   }
 `;

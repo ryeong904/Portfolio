@@ -9,4 +9,8 @@ const StyledTitle = styled.h1`
   margin-bottom: 20px;
   color: white;
   text-shadow: 3px 3px 1px black;
+
+  @media all and (max-width: 468px) {
+    display: none;
+  }
 `;

@@ -97,6 +97,16 @@ const Container = styled.div`
   padding: 30px;
   overflow: auto;
   z-index: 1;
+  @media all and (max-width: 850px) {
+    width: 600px;
+    height: 40%;
+  }
+
+  @media all and (max-width: 500px) {
+    width: 250px;
+    height: 50%;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const Content = styled.div`
@@ -121,5 +131,14 @@ const Content = styled.div`
     font-size: 39px;
     border: 1px solid black;
     padding: 6px 18px;
+  }
+
+  @media all and (max-width: 850px) {
+    height: 200px;
+  }
+
+  @media all and (max-width: 500px) {
+    height: 220px;
+    width: 220px;
   }
 `;
