@@ -11,14 +11,13 @@ export function About() {
           <Intro>
             <h2>웹 백엔드 개발자 김혜령입니다.</h2>
             <p>
-              Database 설계하는 것을 좋아하며, REST API를 제작하는 것에 관심이
-              많습니다.
+              node.js를 활용한 서버 개발에 능숙하며, JavaScript와 TypeScript를
+              주로 사용하였습니다.
             </p>
+            <p>배운 것은 블로그와 노션에 기록하며 공부하고 있습니다.</p>
             <p>
-              주로 Node.js를 사용해 서버 개발을 했으며, 앞으로는 Java Spring을
-              공부할 예정입니다.
+              사용자의 작은 불편함이라도 해결할 수 있는 개발자가 되고싶습니다.
             </p>
-            <p>현재는 Docker와 Kubernetes를 공부하고 있습니다.</p>
           </Intro>
         </Content>
       </Container>
@@ -94,7 +93,11 @@ const Container = styled.div`
 
   @media all and (max-width: 850px) {
     width: 600px;
-    height: 50%;
+    height: 60%;
+    img {
+      width: 200px;
+      height: 200px;
+    }
   }
 
   @media all and (max-width: 500px) {

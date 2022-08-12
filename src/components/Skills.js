@@ -114,38 +114,39 @@ export function Skills() {
       <section>
         <div>
           <Content>
-            <h2>Frontend</h2>
-            <div>{list(frontArray)}</div>
-          </Content>
-          <Content>
             <h2>Backend</h2>
-            <div>{list(backArray)}</div>
+            <li>
+              <b>PHP, Node.js, FastAPI</b>를 활용하여 서버 개발을 할 수
+              있습니다.
+            </li>
+            <li>
+              <b>REST API</b>를 제작하고 <b>OAuth</b>를 사용해 소셜 로그인을
+              구현할 수 있습니다.
+            </li>
+            <li>
+              <b>JWT</b>을 사용해 로그인 기능을 구현할 수 있습니다.
+            </li>
           </Content>
           <Content>
             <h2>Database</h2>
-            <div>{list(dbArray)}</div>
+            <li>
+              <b>SQL, NoSQL</b>를 사용하여 프로젝트DB를 구축할 수 있습니다.
+            </li>
+            <li>
+              <b>ODM, ORM</b>을 활용해 데이터베이스를 관리할 수 있습니다.
+            </li>
+            <li>유연한 쿼리문 작성으로 데이터를 관리할 수 있습니다.</li>
           </Content>
           <Content>
-            <h2>Mobile</h2>
-            <div>{list(mobileArray)}</div>
+            <h2>Infra</h2>
+            <li>
+              <b>Docker</b>를 활용하여 웹사이트를 배포할 수 있습니다.
+            </li>
+            <li>
+              <b>AWS S3</b>를 사용해 객체를 저장할 수 있고, 이를 활용할 수
+              있습니다.
+            </li>
           </Content>
-          <Content>
-            <h2>Version Control System</h2>
-            <div>{list(vcsArray)}</div>
-          </Content>
-        </div>
-        <div>
-          <h2>Programming Language</h2>
-          {flag ? (
-            <Doughnut
-              data={chartData}
-              width="300px"
-              height="300px"
-              options={options}
-            />
-          ) : (
-            <div>Loading ...</div>
-          )}
         </div>
       </section>
     </Main>
@@ -156,35 +157,28 @@ const Content = styled.div`
   display: flex;
   width: 80%;
   flex-direction: column;
+  justify-content: flex-start;
 
-  &:last-of-type {
-    border-bottom: none;
-  }
-  div {
-    min-width: 75px;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  div p {
-    font-size: 0.95rem;
+  li {
+    font-size: 1rem;
     font-weight: 400;
     color: black;
-    background-color: rgb(255, 255, 255, 0.8);
-    margin: 0px 10px 10px 0px;
-    padding: 5px 12px;
-    border-radius: 25rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    // background-color: rgb(255, 255, 255, 0.8);
+    margin: 7px 0px 7px 0px;
   }
 
   h2 {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1.3rem;
     margin: 10px 0;
     text-shadow: 1px 1px 2px #a1a1a1;
+    display: flex;
+  }
+
+  @media all and (max-width: 500px) {
+    li {
+      font-size: 0.95rem;
+    }
   }
 `;
 
@@ -214,25 +208,29 @@ const Main = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    width: 45%;
+    width: 100%;
+    overflow: auto;
   }
 
   section {
     width: 800px;
     height: 70%;
-    background-color: rgb(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
     @media all and (max-width: 850px) {
       width: 600px;
+      height: 50%;
     }
     @media all and (max-width: 500px) {
-      width: 400px;
+      width: 300px;
+      height: 70%;
+      padding: 30px 0;
     }
   }
 

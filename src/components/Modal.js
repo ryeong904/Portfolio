@@ -147,5 +147,10 @@ const MyModal = styled.div`
     h2 {
       font-size: 2rem;
     }
+
+    .skill > li {
+      height: 16px;
+      font-size: 1rem;
+    }
   }
 `;
