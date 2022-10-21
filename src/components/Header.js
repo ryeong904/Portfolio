@@ -14,8 +14,8 @@ export function Header() {
       <div>
         <img src="image/khr.jpg"></img>
       </div>
-      <h1>HR Kim</h1>
-      <hr style={{ width: 200, marginTop: 5 }}></hr>
+      <h1 style={{ margin: '12px 0' }}>HR Kim</h1>
+      <hr style={{ width: 200, margin: '10px auto' }}></hr>
       <IconList>
         <a href="https://github.com/ryeong904" target="_blank">
           <FontAwesomeIcon icon={faGithubAlt} size="xl" color="#749f82" />
@@ -27,27 +27,27 @@ export function Header() {
           <FontAwesomeIcon icon={faEnvelope} size="xl" color="#749f82" />
         </a>
       </IconList>
-      <hr style={{ width: 200 }}></hr>
+      <hr style={{ width: 200, margin: '10px auto' }}></hr>
       <MenuWrapper>
         <li>
-          <a href="">
+          <Link to="/">
             <FontAwesomeIcon
               icon={faUser}
               size="1x"
               style={{ marginLeft: 2, marginRight: 15 }}
             ></FontAwesomeIcon>
             <span>About Me</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="">
+          <Link to="/projects">
             <FontAwesomeIcon
               icon={faKeyboard}
               size="1x"
               style={{ marginRight: 14 }}
             ></FontAwesomeIcon>
             <span>Projects</span>
-          </a>
+          </Link>
         </li>
         <li>
           <a href="pdf/resume.pdf" target="_blank">
