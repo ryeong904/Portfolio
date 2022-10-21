@@ -1,6 +1,6 @@
 import './App.css';
 import styled from 'styled-components';
-import { HeaderTag } from './components/Header';
+import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { Project } from './components/Project';
 import { Skills } from './components/Skills';
@@ -10,51 +10,32 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
-      <HeaderTag></HeaderTag>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <HomeContainer>
-              <Home></Home>
-            </HomeContainer>
-          }
-        ></Route>
-        <Route
-          path="/about"
-          element={
-            <HomeContainer>
-              <About></About>
-            </HomeContainer>
-          }
-        ></Route>
-        <Route
-          path="/skills"
-          element={
-            <HomeContainer>
-              <Skills></Skills>
-            </HomeContainer>
-          }
-        ></Route>
-        <Route
-          path="/projects"
-          element={
-            <HomeContainer>
-              <Project></Project>
-            </HomeContainer>
-          }
-        ></Route>
-      </Routes>
-      <Footer></Footer>
-    </BrowserRouter>
+    <MainContainer>
+      <Header></Header>
+      <SelfContainer>
+        <div>자기소개</div>
+        <div>기술 스택 What I do</div>
+      </SelfContainer>
+    </MainContainer>
   );
 }
 
-const HomeContainer = styled.div`
-  height: 100vh;
-  background-image: url('image/background.jpg');
-  background-size: cover;
+// Header 배경색 : #749F82
+
+// 전체 컨테이너
+const MainContainer = styled.div`
+  // 섹션 나누는 코드
+  // display: grid;
+  // height: 100vh;
+`;
+
+// 우측 자기소개 & 기술 스택 컨테이너
+const SelfContainer = styled.div`
+  // temp
+  border: 10px solid red;
+  display: grid;
+  grid-template-rows: 0.7fr 1fr;
+  margin-left: 300px;
 `;
 
 export default App;
