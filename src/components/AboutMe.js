@@ -82,12 +82,16 @@ const Container = styled.div`
   grid-template-rows: 0.5fr 1fr;
   margin-left: 300px;
   height: 100vh;
+
+  // 반응형 조절. 패드 & 스마트폰 크기일 경우 가운데로
+  @media all and (max-width: 976px) {
+    margin-left: 0;
+  }
 `;
 
 const MySelf = styled.section`
-  padding: 40px 70px;
+  padding: 40px 70px 40px 70px;
   background-color: #f5f5f5;
-
   h1 {
     font-size: 40px;
     font-weight: 700;
@@ -107,10 +111,17 @@ const MySelf = styled.section`
       text-decoration: none;
     }
   }
+
+  // 반응형 조절
+  @media all and (max-width: 976px) {
+    section {
+      width: 100vw;
+    }
+  }
 `;
 
 const Skills = styled.section`
-  padding: 0px 70px;
+  padding-left: 70px;
 
   h1 {
     font-size: 30px;
@@ -123,6 +134,7 @@ const Skills = styled.section`
   #SkillContainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 `;
 

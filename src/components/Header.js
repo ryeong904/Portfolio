@@ -8,61 +8,112 @@ import {
   faFileLines,
   faKeyboard,
 } from '@fortawesome/free-solid-svg-icons';
+
 export function Header() {
   return (
     <HeaderWrapper>
-      <div>
-        <img src="image/khr.jpg"></img>
-      </div>
-      <h1 style={{ margin: '12px 0' }}>HR Kim</h1>
-      <hr style={{ width: 200, margin: '10px auto' }}></hr>
-      <IconList>
-        <a href="https://github.com/ryeong904" target="_blank">
-          <FontAwesomeIcon icon={faGithubAlt} size="xl" color="#749f82" />
-        </a>
-        <a href="https://velog.io/@fud904" target="_blank">
-          <FontAwesomeIcon icon={faBloggerB} size="xl" color="#749f82" />
-        </a>
-        <a href="mailto:ryeong3725@gmail.com">
-          <FontAwesomeIcon icon={faEnvelope} size="xl" color="#749f82" />
-        </a>
-      </IconList>
-      <hr style={{ width: 200, margin: '10px auto' }}></hr>
-      <MenuWrapper>
-        <li>
-          <Link to="/">
-            <FontAwesomeIcon
-              icon={faUser}
-              size="1x"
-              style={{ marginLeft: 2, marginRight: 15 }}
-            ></FontAwesomeIcon>
-            <span>About Me</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/projects">
-            <FontAwesomeIcon
-              icon={faKeyboard}
-              size="1x"
-              style={{ marginRight: 14 }}
-            ></FontAwesomeIcon>
-            <span>Projects</span>
-          </Link>
-        </li>
-        <li>
-          <a href="pdf/resume.pdf" target="_blank">
-            <FontAwesomeIcon
-              icon={faFileLines}
-              size="1x"
-              style={{ marginLeft: 4, marginRight: 18 }}
-            ></FontAwesomeIcon>
-            <span>Resume</span>
+      <div id="navigation">
+        <div>
+          <img id="profile" src="image/khr.jpg"></img>
+        </div>
+        <h1 id="name">HR Kim</h1>
+        <hr style={{ width: 200, margin: '10px auto' }}></hr>
+        <IconList>
+          <a href="https://github.com/ryeong904" target="_blank">
+            <FontAwesomeIcon icon={faGithubAlt} size="xl" color="#749f82" />
           </a>
-        </li>
-      </MenuWrapper>
+          <a href="https://velog.io/@fud904" target="_blank">
+            <FontAwesomeIcon icon={faBloggerB} size="xl" color="#749f82" />
+          </a>
+          <a href="mailto:ryeong3725@gmail.com">
+            <FontAwesomeIcon icon={faEnvelope} size="xl" color="#749f82" />
+          </a>
+        </IconList>
+        <hr style={{ width: 200, margin: '10px auto' }}></hr>
+        <MenuWrapper>
+          <li>
+            <Link to="/">
+              <FontAwesomeIcon
+                icon={faUser}
+                size="1x"
+                style={{ marginLeft: 10, marginRight: 15 }}
+              ></FontAwesomeIcon>
+              <span>About Me</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/projects">
+              <FontAwesomeIcon
+                icon={faKeyboard}
+                size="1x"
+                style={{ marginRight: 14 }}
+              ></FontAwesomeIcon>
+              <span>Projects</span>
+            </Link>
+          </li>
+          <li>
+            <a href="pdf/resume.pdf" target="_blank">
+              <FontAwesomeIcon
+                icon={faFileLines}
+                size="1x"
+                style={{ marginLeft: 4, marginRight: 16 }}
+              ></FontAwesomeIcon>
+              <span>Resume</span>
+            </a>
+          </li>
+        </MenuWrapper>
+      </div>
     </HeaderWrapper>
   );
 }
+
+// 나중에 햄버거 메뉴 도전하기...
+const NavBar = styled.nav`
+  display: flex;
+  width: 100%;
+
+  h1 {
+    display: none;
+  }
+
+  #menu {
+    display: none;
+    padding: 4px;
+
+    // 배치
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    z-index: 1;
+
+    // 테두리
+    width: 40px;
+    border: 2px solid #e3e3e3;
+
+    &:hover {
+      transition: all 0.1s;
+      cursor: pointer;
+      color: white;
+      border: 2px solid;
+    }
+  }
+
+  // 반응형 조절. 패드 & 스마트폰 크기일 경우 위로 가게함
+  @media all and (max-width: 976px) {
+    #menu {
+      display: block;
+    }
+    h1 {
+      display: block;
+      position: absolute;
+      font-size: 2em;
+      width: 100%;
+      top: 1.2rem;
+    }
+  }
+  @media all and (max-width: 500px) {
+  }
+`;
 
 // 카테고리 메뉴 컴포넌트
 const MenuWrapper = styled.ul`
@@ -72,9 +123,7 @@ const MenuWrapper = styled.ul`
 
   display: flex;
   flex-direction: column;
-
-  // 카테고리 메뉴들 가운데로
-  margin: 0 auto;
+  align-items: center;
 
   // 디테일한 부분 스타일링
   li {
@@ -120,14 +169,35 @@ const HeaderWrapper = styled.header`
   margin: auto 0;
   justify-content: center;
 
-  h1 {
-  }
-
   // 헤더 프로필 이미지 조절
-  img {
+  #profile {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+  }
+
+  #name {
+    margin: 12px 0;
+  }
+
+  // 반응형 조절. 패드 & 스마트폰 크기일 경우 위로 가게함
+
+  @media all and (max-width: 976px) {
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    #profile {
+      display: none;
+    }
+
+    #name {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media all and (max-width: 500px) {
   }
 `;
 
@@ -152,79 +222,3 @@ const IconList = styled.div`
     background: white;
   }
 `;
-
-// export function HeaderTag() {
-//   return (
-//     <Header>
-//       <Wrapper>
-//         <Nav>
-//           <ul>
-// <li>
-//   <Link to="/">Home</Link>
-// </li>
-// <li>
-//   <Link to="/about">About</Link>
-// </li>
-// <li>
-//   <Link to="/skills">Skills</Link>
-// </li>
-// <li>
-//   <Link to="/projects">Projects</Link>
-// </li>
-//           </ul>
-//         </Nav>
-//       </Wrapper>
-//     </Header>
-//   );
-// }
-
-// const Wrapper = styled.div`
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   width: 400px;
-// `;
-
-// const Header = styled.header`
-//   position: fixed;
-//   color: white;
-//   width: 100%;
-//   height: 70px;
-//   display: flex;
-//   justify-content: center;
-//   & a {
-//     text-decoration: none;
-//   }
-// `;
-
-// const Nav = styled.nav`
-//   ul {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     margin: 0;
-//     padding: 0;
-//     height: 100%;
-//   }
-
-//   ul li {
-//     list-style-type: none;
-//     text-shadow: 1px 1px 2px black;
-//   }
-
-//   ul li + li {
-//     margin-left: 40px;
-//   }
-
-//   ul li a {
-//     text-decoration: none;
-//     font-size: 1.18rem;
-//     font-weight: 700;
-//     transition: all 0.3s;
-//     color: white;
-//   }
-
-//   ul li a:hover {
-//     color: #b0b0b0;
-//   }
-// `;
