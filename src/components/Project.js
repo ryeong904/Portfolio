@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export function Project() {
   const data = ['All', 'Web', 'Android', 'ETC'];
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(0);
 
   const toggleActive = (e) => {
     setActive(e.target.value);
@@ -19,7 +19,7 @@ export function Project() {
           확인하실 수 있습니다.
         </p>
       </Info>
-      <ProjectList>
+      <Main>
         <CategoryList>
           {data.map((item, i) => {
             return (
@@ -34,7 +34,46 @@ export function Project() {
             );
           })}
         </CategoryList>
-      </ProjectList>
+        <ProjectList>
+          <PrjoectBox>
+            <div className="image-section">
+              <img src="image/togefit.PNG"></img>
+            </div>
+            <div className="prev">
+              <h4>Togefit</h4>
+              <p>#Node.js #API #TypeScript</p>
+              <p>
+                운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티 사이트
+              </p>
+            </div>
+          </PrjoectBox>
+          <PrjoectBox>
+            <div className="image-section">
+              <img src="image/togefit.PNG"></img>
+            </div>
+            <div className="prev">
+              <h4>Togefit</h4>
+              <p>#Node.js #API #TypeScript</p>
+              <p>
+                운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티
+                사이트운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티
+              </p>
+            </div>
+          </PrjoectBox>{' '}
+          <PrjoectBox>
+            <div className="image-section">
+              <img src="image/togefit.PNG"></img>
+            </div>
+            <div className="prev">
+              <h4>Togefit</h4>
+              <p>#Node.js #API #TypeScript</p>
+              <p>
+                운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티 사이트
+              </p>
+            </div>
+          </PrjoectBox>
+        </ProjectList>
+      </Main>
     </Container>
   );
 }
@@ -68,9 +107,15 @@ const Info = styled.section`
   }
 `;
 
-const ProjectList = styled.section`
+const Main = styled.section`
   padding: 40px 70px 40px 70px;
   display: block;
+
+  @media all and (max-width: 1300px) {
+    & {
+      padding: 30px;
+    }
+  }
 `;
 
 const CategoryList = styled.div`
@@ -84,7 +129,7 @@ const Category = styled.li`
   font-weight: 600;
   font-size: 17px;
   cursor: pointer;
-  padding: 5px;
+  padding: 3px;
 
   // 첫 번째 요소 제외하고 마진
   &:not(:first-of-type) {
@@ -93,5 +138,82 @@ const Category = styled.li`
 
   &:hover {
     color: black;
+  }
+`;
+
+const ProjectList = styled.div`
+  height: 100%;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const PrjoectBox = styled.div`
+  width: 48%;
+  height: 230px;
+
+  background-color: #f5f5f5;
+
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+
+  margin-top: 10px;
+
+  @media all and (max-width: 1200px) {
+    & {
+      height: 450px;
+      grid-template-columns: unset;
+      grid-template-rows: 0.5fr 1fr;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    & {
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+    filter: brightness(85%);
+  }
+
+  .image-section {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    img {
+      margin: auto;
+      width: 70%;
+      height: 70%;
+    }
+  }
+
+  .prev {
+    padding: 18px 15px 0px 15px;
+    text-align: left;
+
+    h4 {
+      display: inline;
+
+      // font관련
+      font-size: 25px;
+      font-weight: 600;
+
+      border-bottom: 3px solid #b5b5b5;
+    }
+
+    p {
+      margin-top: 20px;
+    }
   }
 `;

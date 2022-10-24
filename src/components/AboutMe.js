@@ -5,7 +5,7 @@ export function AboutMe() {
     <Container>
       <MySelf>
         <h1>Kim Hye Ryeong</h1>
-        <h2>SW Engineer</h2>
+        <h2>Junior SW Engineer</h2>
         <p>안녕하세요, 저의 포트폴리오 사이트에 방문해주셔서 감사합니다 :)</p>
         <p>
           저는 Java와 JavaScript를 메인으로 웹 개발을 주로 하는 개발자
@@ -24,7 +24,7 @@ export function AboutMe() {
       </MySelf>
       <Skills>
         <h1>Skills</h1>
-        <p style={{ color: '#4f4f4f', padding: '40px 0' }}>
+        <p style={{ color: '#4f4f4f', padding: '40px 40px 40px 0' }}>
           다음과 같은 기술 스택을 사용해 개발을 할 수 있습니다.
         </p>
         <div id="SkillContainer">
