@@ -2,7 +2,26 @@ import styled from 'styled-components';
 import styles from './Project.css';
 import { useState } from 'react';
 
+const projectPreviewData = [
+  {
+    imageUrl: 'image/togefit.PNG',
+    projectName: 'Togefit',
+    intro: '운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티 사이트',
+    tags: ['TypeScript', 'Node.js', 'Docker', 'AWS S3', 'Jest'],
+    category: 'Web',
+  },
+  {
+    imageUrl: 'image/logo.png',
+    projectName: 'Collectors',
+    intro: '초능력 판매 웹 쇼핑몰',
+    tags: ['JavaScript', 'Node.js', 'JWT', 'MongoDB'],
+    category: 'Web',
+  },
+];
+
 export function Project() {
+  const temp = ['TypeScript', 'Node.js', 'Docker', 'AWS S3', 'Jest'];
+
   const data = ['All', 'Web', 'Android', 'ETC'];
   const [active, setActive] = useState(0);
 
@@ -35,43 +54,24 @@ export function Project() {
           })}
         </CategoryList>
         <ProjectList>
-          <PrjoectBox>
-            <div className="image-section">
-              <img src="image/togefit.PNG"></img>
-            </div>
-            <div className="prev">
-              <h4>Togefit</h4>
-              <p>#Node.js #API #TypeScript</p>
-              <p>
-                운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티 사이트
-              </p>
-            </div>
-          </PrjoectBox>
-          <PrjoectBox>
-            <div className="image-section">
-              <img src="image/togefit.PNG"></img>
-            </div>
-            <div className="prev">
-              <h4>Togefit</h4>
-              <p>#Node.js #API #TypeScript</p>
-              <p>
-                운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티
-                사이트운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티
-              </p>
-            </div>
-          </PrjoectBox>{' '}
-          <PrjoectBox>
-            <div className="image-section">
-              <img src="image/togefit.PNG"></img>
-            </div>
-            <div className="prev">
-              <h4>Togefit</h4>
-              <p>#Node.js #API #TypeScript</p>
-              <p>
-                운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티 사이트
-              </p>
-            </div>
-          </PrjoectBox>
+          {projectPreviewData.map((item) => {
+            return (
+              <PrjoectBox>
+                <div className="image-section">
+                  <img src={item.imageUrl}></img>
+                </div>
+                <div className="prev">
+                  <h4>{item.projectName}</h4>
+                  <p>{item.intro}</p>
+                  <div className="tag-section">
+                    {item.tags.map((item) => {
+                      return <span key={item}>#{item}</span>;
+                    })}
+                  </div>
+                </div>
+              </PrjoectBox>
+            );
+          })}
         </ProjectList>
       </Main>
     </Container>
@@ -213,7 +213,24 @@ const PrjoectBox = styled.div`
     }
 
     p {
-      margin-top: 20px;
+      margin: 20px 0;
+    }
+
+    .tag-section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      span {
+        font-size: 15px;
+        color: #828282;
+        font-weight: 600;
+        padding: 1px;
+
+        &:not(:last-of-type) {
+          margin-right: 5px;
+        }
+      }
     }
   }
 `;

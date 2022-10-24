@@ -108,7 +108,6 @@ const MySelf = styled.section`
     padding: 2px;
     a {
       color: #749f82;
-      text-decoration: none;
     }
   }
 
