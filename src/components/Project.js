@@ -1,146 +1,97 @@
 import styled from 'styled-components';
+import styles from './Project.css';
 import { useState } from 'react';
-import { Modal } from './Modal';
-import projectList from '../data/projectList.json';
-import { useEffect } from 'react';
-import { Title } from './Title';
 
-export function Project() {}
+export function Project() {
+  const data = ['All', 'Web', 'Android', 'ETC'];
+  const [active, setActive] = useState(null);
 
-// export function Project() {
-//   const [number, setNumber] = useState(0);
-//   const [data, setData] = useState(projectList[number]);
+  const toggleActive = (e) => {
+    setActive(e.target.value);
+  };
 
-//   useEffect(() => {
-//     setData(projectList[number]);
-//   }, [number]);
+  return (
+    <Container>
+      <Info>
+        <h1>Projects</h1>
+        <p>
+          학부생 시절과 부트 캠프, 개인적으로 공부하며 제작한 프로젝트를
+          확인하실 수 있습니다.
+        </p>
+      </Info>
+      <ProjectList>
+        <CategoryList>
+          {data.map((item, i) => {
+            return (
+              <Category
+                key={i}
+                value={i}
+                onClick={toggleActive}
+                className={i == active ? 'active' : 'non-active'}
+              >
+                {item}
+              </Category>
+            );
+          })}
+        </CategoryList>
+      </ProjectList>
+    </Container>
+  );
+}
 
-//   const clickHandler = (num) => {
-//     setNumber(num);
-//     document.getElementById('modal').style.opacity = 1;
-//     document.getElementById('modal').style.transform = 'scale(1)';
-//     document.getElementById('modal').style.zIndex = 2;
-//   };
-//   return (
-//     <Main>
-//       <Title title={'Projects'}></Title>
-//       <Container>
-//         <Content
-//           onClick={() => {
-//             clickHandler(4);
-//           }}
-//         >
-//           <img src="image/togefit.PNG" alt="togefit-logo-image"></img>
-//         </Content>
-//         <Content
-//           style={{ backgroundColor: '#333333' }}
-//           onClick={() => {
-//             clickHandler(0);
-//           }}
-//         >
-//           <img src="image/logo.png" alt="shoppingmall-logo-image"></img>
-//         </Content>
-//         <Content
-//           onClick={() => {
-//             clickHandler(1);
-//           }}
-//         >
-//           <img src="image/diary.PNG" alt="diary-main-image"></img>
-//         </Content>
-//         <Content
-//           onClick={() => {
-//             clickHandler(2);
-//           }}
-//         >
-//           <img src="image/portfolio-s.PNG" alt="portfolio-main-image"></img>
-//         </Content>
-//         <Content
-//           onClick={() => {
-//             clickHandler(3);
-//           }}
-//         >
-//           <img src="image/dashboard.png" alt="dashboard-main-image"></img>
-//         </Content>
-//       </Container>
-//       <Modal props={data}></Modal>
-//     </Main>
-//   );
-// }
+const Container = styled.div`
+  display: grid;
+  grid-template-rows: 0.2fr 1fr;
+  margin-left: 300px;
+  height: 100vh;
 
-// const Main = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   transition: all 0.2s;
-//   animation: background 0.5s;
+  // 반응형 조절. 패드 & 스마트폰 크기일 경우 가운데로
+  @media all and (max-width: 976px) {
+    margin-left: 0;
+  }
+`;
 
-//   @keyframes background {
-//     0% {
-//       opacity: 0;
-//     }
-//     to {
-//       opacity: 1;
-//     }
-//   }
-// `;
+const Info = styled.section`
+  padding: 40px 70px 40px 70px;
+  background-color: #f5f5f5;
+  text-align: center;
 
-// const Container = styled.div`
-//   width: 800px;
-//   height: 60%;
-//   background-color: rgb(255, 255, 255, 0.2);
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   align-items: center;
-//   gap: 20px;
-//   justify-items: center;
-//   padding: 30px;
-//   overflow: auto;
-//   z-index: 1;
-//   @media all and (max-width: 850px) {
-//     width: 600px;
-//     height: 40%;
-//   }
+  h1 {
+    font-weight: 600;
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
 
-//   @media all and (max-width: 500px) {
-//     width: 250px;
-//     height: 50%;
-//     grid-template-columns: repeat(1, 1fr);
-//   }
-// `;
+  p {
+    color: #4f4f4f;
+    padding: 2px;
+  }
+`;
 
-// const Content = styled.div`
-//   width: 100%;
-//   height: 240px;
-//   cursor: pointer;
-//   background-color: white;
-//   transition: all 0.3s;
+const ProjectList = styled.section`
+  padding: 40px 70px 40px 70px;
+  display: block;
+`;
 
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
+const CategoryList = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
-//   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-//   &:hover {
-//     transform: scale(1.03);
-//   }
-//   img {
-//     width: 100%;
-//   }
-//   p {
-//     font-size: 39px;
-//     border: 1px solid black;
-//     padding: 6px 18px;
-//   }
+const Category = styled.li`
+  list-style: none;
+  float: left;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  padding: 5px;
 
-//   @media all and (max-width: 850px) {
-//     height: 200px;
-//   }
+  // 첫 번째 요소 제외하고 마진
+  &:not(:first-of-type) {
+    margin-left: 20px;
+  }
 
-//   @media all and (max-width: 500px) {
-//     height: 220px;
-//     width: 220px;
-//   }
-// `;
+  &:hover {
+    color: black;
+  }
+`;
