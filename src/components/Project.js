@@ -11,18 +11,44 @@ const projectPreviewData = [
     category: 'Web',
   },
   {
-    imageUrl: 'image/logo.png',
+    imageUrl: 'image/collectors.PNG',
     projectName: 'Collectors',
     intro: '초능력 판매 웹 쇼핑몰',
     tags: ['JavaScript', 'Node.js', 'JWT', 'MongoDB'],
     category: 'Web',
   },
+  {
+    imageUrl: 'image/android.png',
+    projectName: '여행사진을 부탁해!',
+    intro: '여행사진 관리 앱',
+    tags: ['Java', 'Android', 'Keras'],
+    category: 'App',
+  },
+  {
+    imageUrl: 'image/diary.PNG',
+    projectName: '하루기록 다이어리',
+    intro: '달력/리스트 형태로 일기를 작성할 수 있는 웹사이트',
+    tags: ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHP'],
+    category: 'Web',
+  },
+  {
+    imageUrl: 'image/Grafana_logo.PNG',
+    projectName: '그라파나 대시보드',
+    intro: '한국천문연구원 인턴십 - 연구원 대시보드 따라서 제작하기',
+    tags: ['Python', 'SQLAlchemy', 'FastAPI', 'Grafana'],
+    category: 'ETC',
+  },
+  {
+    imageUrl: 'image/portfolio.png',
+    projectName: '포트폴리오 웹사이트',
+    intro: '리액트로 제작한 포트폴리오',
+    tags: ['React', 'Styled-Component'],
+    category: 'ETC',
+  },
 ];
 
 export function Project() {
-  const temp = ['TypeScript', 'Node.js', 'Docker', 'AWS S3', 'Jest'];
-
-  const data = ['All', 'Web', 'Android', 'ETC'];
+  const data = ['All', 'Web', 'App', 'ETC'];
   const [active, setActive] = useState(0);
 
   const toggleActive = (e) => {
@@ -57,7 +83,14 @@ export function Project() {
           {projectPreviewData.map((item) => {
             return (
               <PrjoectBox>
-                <div className="image-section">
+                <div
+                  className="image-section"
+                  style={
+                    item.projectName == 'Collectors'
+                      ? { backgroundColor: '#333333' }
+                      : { backgroundColor: 'white' }
+                  }
+                >
                   <img src={item.imageUrl}></img>
                 </div>
                 <div className="prev">
@@ -158,23 +191,9 @@ const PrjoectBox = styled.div`
   background-color: #f5f5f5;
 
   display: grid;
-  grid-template-columns: 0.7fr 1fr;
+  grid-template-columns: 0.8fr 1fr;
 
   margin-top: 10px;
-
-  @media all and (max-width: 1200px) {
-    & {
-      height: 450px;
-      grid-template-columns: unset;
-      grid-template-rows: 0.5fr 1fr;
-    }
-  }
-
-  @media all and (max-width: 600px) {
-    & {
-      width: 100%;
-    }
-  }
 
   &:hover {
     cursor: pointer;
@@ -184,6 +203,8 @@ const PrjoectBox = styled.div`
 
   .image-section {
     background-color: white;
+
+    margin: auto;
     height: 100%;
     width: 100%;
 
@@ -191,10 +212,13 @@ const PrjoectBox = styled.div`
     align-content: center;
     justify-content: center;
 
+    object-fit: cover;
+
     img {
+      background-color: white;
+      width: 65%;
+      height: 130px;
       margin: auto;
-      width: 70%;
-      height: 70%;
     }
   }
 
@@ -231,6 +255,36 @@ const PrjoectBox = styled.div`
           margin-right: 5px;
         }
       }
+    }
+  }
+
+  @media all and (max-width: 1200px) {
+    & {
+      height: 450px;
+      grid-template-columns: unset;
+      grid-template-rows: 250px 200px;
+    }
+
+    .image-section {
+      object-fit: cover;
+
+      img {
+        background-color: #f5f5f5;
+        width: 100%;
+        height: 300px;
+      }
+    }
+  }
+
+  @media all and (max-width: 976px) {
+    & {
+      grid-template-rows: 200px 200px;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    & {
+      width: 100%;
     }
   }
 `;
