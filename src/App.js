@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Header } from './components/Header';
 import { AboutMe } from './components/AboutMe';
 import { Project } from './components/Project';
+import { Detail } from './components/Detail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -11,8 +12,10 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<AboutMe></AboutMe>}></Route>
-      </Routes>
-      <Routes>
+        <Route
+          path="/projects/:projectName"
+          element={<Detail></Detail>}
+        ></Route>
         <Route path="/projects" element={<Project></Project>}></Route>
       </Routes>
     </BrowserRouter>

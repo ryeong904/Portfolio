@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 import styles from './Project.css';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const projectPreviewData = [
   {
     imageUrl: 'image/togefit.PNG',
     projectName: 'Togefit',
+    subName: 'togefit',
     intro: '운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티 사이트',
     tags: ['TypeScript', 'Node.js', 'Docker', 'AWS S3', 'Jest'],
     category: 'Web',
   },
   {
-    imageUrl: 'image/collectors.PNG',
+    imageUrl: 'image/logo.png',
     projectName: 'Collectors',
+    subName: 'collectors',
     intro: '초능력 판매 웹 쇼핑몰',
     tags: ['JavaScript', 'Node.js', 'JWT', 'MongoDB'],
     category: 'Web',
@@ -20,6 +23,7 @@ const projectPreviewData = [
   {
     imageUrl: 'image/android.png',
     projectName: '여행사진을 부탁해!',
+    subName: 'photoApp',
     intro: '여행사진 관리 앱',
     tags: ['Java', 'Android', 'Keras'],
     category: 'App',
@@ -27,6 +31,7 @@ const projectPreviewData = [
   {
     imageUrl: 'image/diary.PNG',
     projectName: '하루기록 다이어리',
+    subName: 'diary',
     intro: '달력/리스트 형태로 일기를 작성할 수 있는 웹사이트',
     tags: ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHP'],
     category: 'Web',
@@ -34,6 +39,7 @@ const projectPreviewData = [
   {
     imageUrl: 'image/Grafana_logo.PNG',
     projectName: '그라파나 대시보드',
+    subName: 'dashboard',
     intro: '한국천문연구원 인턴십 - 연구원 대시보드 따라서 제작하기',
     tags: ['Python', 'SQLAlchemy', 'FastAPI', 'Grafana'],
     category: 'ETC',
@@ -41,18 +47,67 @@ const projectPreviewData = [
   {
     imageUrl: 'image/portfolio.png',
     projectName: '포트폴리오 웹사이트',
+    subName: 'portfolio',
     intro: '리액트로 제작한 포트폴리오',
     tags: ['React', 'Styled-Component'],
-    category: 'ETC',
+    category: 'Web',
   },
 ];
+
+const categoryNumToChar = (num) => {
+  switch (num) {
+    case 0: // All
+      return 'All';
+    case 1: // All
+      return 'Web';
+    case 2: // All
+      return 'App';
+    case 3: // All
+      return 'ETC';
+  }
+};
 
 export function Project() {
   const data = ['All', 'Web', 'App', 'ETC'];
   const [active, setActive] = useState(0);
 
   const toggleActive = (e) => {
-    setActive(e.target.value);
+    const num = e.target.value; // 0: all, 1: web, 2: app, 3:etc
+    setActive(num);
+  };
+
+  // 프로젝트 나열 함수. 카테고리에 맞게 배치
+  const ProjectListFunc = () => {
+    const val = categoryNumToChar(active);
+    return projectPreviewData.map((item, idx) => {
+      if (val == 'All' || val == item.category) {
+        return (
+          <Link to={`/projects/${item.subName}`} key={idx}>
+            <PrjoectBox key={idx}>
+              <div
+                className="image-section"
+                style={
+                  item.projectName == 'Collectors'
+                    ? { backgroundColor: '#333333' }
+                    : { backgroundColor: 'white' }
+                }
+              >
+                <img src={item.imageUrl}></img>
+              </div>
+              <div className="prev">
+                <h4>{item.projectName}</h4>
+                <p>{item.intro}</p>
+                <div className="tag-section">
+                  {item.tags.map((item) => {
+                    return <span key={item}>#{item}</span>;
+                  })}
+                </div>
+              </div>
+            </PrjoectBox>
+          </Link>
+        );
+      }
+    });
   };
 
   return (
@@ -79,33 +134,7 @@ export function Project() {
             );
           })}
         </CategoryList>
-        <ProjectList>
-          {projectPreviewData.map((item) => {
-            return (
-              <PrjoectBox>
-                <div
-                  className="image-section"
-                  style={
-                    item.projectName == 'Collectors'
-                      ? { backgroundColor: '#333333' }
-                      : { backgroundColor: 'white' }
-                  }
-                >
-                  <img src={item.imageUrl}></img>
-                </div>
-                <div className="prev">
-                  <h4>{item.projectName}</h4>
-                  <p>{item.intro}</p>
-                  <div className="tag-section">
-                    {item.tags.map((item) => {
-                      return <span key={item}>#{item}</span>;
-                    })}
-                  </div>
-                </div>
-              </PrjoectBox>
-            );
-          })}
-        </ProjectList>
+        <ProjectList>{ProjectListFunc()}</ProjectList>
       </Main>
     </Container>
   );
@@ -182,10 +211,22 @@ const ProjectList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  a {
+    width: 49%;
+    text-decoration: none;
+    color: black;
+  }
+
+  @media all and (max-width: 600px) {
+    a {
+      width: 100%;
+    }
+  }
 `;
 
 const PrjoectBox = styled.div`
-  width: 48%;
+  width: 100%;
   height: 230px;
 
   background-color: #f5f5f5;
@@ -265,26 +306,16 @@ const PrjoectBox = styled.div`
       grid-template-rows: 250px 200px;
     }
 
-    .image-section {
-      object-fit: cover;
-
-      img {
-        background-color: #f5f5f5;
-        width: 100%;
-        height: 300px;
-      }
+    .image-section > img {
+      width: 60%;
+      height: 180px;
     }
   }
-
-  @media all and (max-width: 976px) {
-    & {
-      grid-template-rows: 200px 200px;
-    }
-  }
-
   @media all and (max-width: 600px) {
     & {
+      height: 380px;
       width: 100%;
+      grid-template-rows: 200px 180px;
     }
   }
 `;
