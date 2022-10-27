@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { TagSection } from './TagSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const data = [
   {
@@ -81,91 +83,123 @@ export function Detail() {
     'node',
     'node',
   ];
+
+  const navigate = useNavigate();
+
+  const handleHistory = () => {
+    navigate(-1);
+  };
+
   return (
-    <Container>
-      <Overview>
-        <h1>Project Name: [Togefit]</h1>
-        <p>
-          프로젝트 설명란: 운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티
-          사이트
-        </p>
-      </Overview>
-      <Main>
-        <ProjectInfo>
-          <div className="gif-section">
-            <img src="../image/togefit.gif"></img>
-          </div>
-          <div className="information">
-            <a href="#" target="_blank">
-              <FontAwesomeIcon
-                icon={faGithub}
-                size="2x"
-                color="#1f1f1f"
-                style={{ marginBottom: 15 }}
-              />
-            </a>
-            <br></br>
-            <h3>Overview</h3>
-            <p>
-              운동과 식단에는 관심이 많지만, 정보를 얻기가 힘든 경우가 많습니다.
-              따라서 관련된 정보를 쉽게 공유하고 기록하며 동기부여가 되는 웹
-              사이트를 제작하였습니다.
-            </p>
-            <h3>Develop Period</h3>
-            <p>2022.07.04 ~ 2022.07.24</p>
-            <h3>Role</h3>
-            <p>Backend</p>
-            <h3>Skills</h3>
-            <TagSection>
-              {temp.map((item) => {
-                return (
-                  <span
-                    style={{
-                      marginTop: 5,
-                      fontSize: 16,
-                      color: '#4f4f4f',
-                      fontWeight: 400,
-                    }}
-                    key={item}
-                  >
-                    #{item}
-                  </span>
-                );
-              })}
-            </TagSection>
-          </div>
-        </ProjectInfo>
-        <Information>
-          <h2>Information</h2>
-          <li>
-            운동과 식단 등 건강 관리에 관련된 정보들을 공유할 수 있는 커뮤니티
-            사이트입니다.
-          </li>
-          <li>
-            운동과 식단 등 건강 관리에 관련된 정보들을 공유할 수 있는 커뮤니티
-            사이트입니다.
-          </li>
-          <li>
-            운동과 식단 등 건강 관리에 관련된 정보들을 공유할 수 있는 커뮤니티
-            사이트입니다.
-          </li>
-
-          <h2>More</h2>
-          <details>
-            <summary>느낀점 & 배운점</summary>
-            <h3>ddd</h3>
-            <p>이렇게 추가 설명이 보여집니다.</p>
-
-            <p>이렇게 추가 설명이 보여집니다.</p>
-            <p>이렇게 추가 설명이 보여집니다.</p>
-            <p>이렇게 추가 설명이 보여집니다.</p>
-            <p>이렇게 추가 설명이 보여집니다.</p>
-          </details>
-        </Information>
-      </Main>
-    </Container>
+    <Wrapper>
+      <Container>
+        <Overview>
+          <h1>Project Name: [Togefit]</h1>
+          <p>
+            프로젝트 설명란: 운동, 식단과 관련된 정보를 공유할 수 있는 웹
+            커뮤니티 사이트
+          </p>
+        </Overview>
+        <Main>
+          <ProjectInfo>
+            <div className="gif-section">
+              <img src="../image/togefit.gif"></img>
+            </div>
+            <div className="information">
+              <a href="#" target="_blank">
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  size="2x"
+                  color="#1f1f1f"
+                  style={{ marginBottom: 15 }}
+                />
+              </a>
+              <br></br>
+              <h3>Overview</h3>
+              <p>
+                운동과 식단에는 관심이 많지만, 정보를 얻기가 힘든 경우가
+                많습니다. 따라서 관련된 정보를 쉽게 공유하고 기록하며 동기부여가
+                되는 웹 사이트를 제작하였습니다.
+              </p>
+              <h3>Develop Period</h3>
+              <p>2022.07.04 ~ 2022.07.24</p>
+              <h3>Role</h3>
+              <p>Backend</p>
+              <h3>Skills</h3>
+              <TagSection>
+                {temp.map((item) => {
+                  return (
+                    <span
+                      style={{
+                        marginTop: 5,
+                        fontSize: 16,
+                        color: '#4f4f4f',
+                        fontWeight: 400,
+                      }}
+                      key={item}
+                    >
+                      #{item}
+                    </span>
+                  );
+                })}
+              </TagSection>
+            </div>
+          </ProjectInfo>
+          <Information>
+            <h2>Information</h2>
+            <li>
+              운동과 식단 등 건강 관리에 관련된 정보들을 공유할 수 있는 커뮤니티
+              사이트입니다.
+            </li>
+            <li>
+              운동과 식단 등 건강 관리에 관련된 정보들을 공유할 수 있는 커뮤니티
+              사이트입니다.
+            </li>
+            <li>
+              운동과 식단 등 건강 관리에 관련된 정보들을 공유할 수 있는 커뮤니티
+              사이트입니다.
+            </li>
+            <h2>More</h2>
+            <details>
+              <summary>느낀점 & 배운점</summary>
+              <h3>ddd</h3>
+              <p>이렇게 추가 설명이 보여집니다.</p>
+              <p>이렇게 추가 설명이 보여집니다.</p>
+              <p>이렇게 추가 설명이 보여집니다.</p>
+              <p>이렇게 추가 설명이 보여집니다.</p>
+              <p>이렇게 추가 설명이 보여집니다.</p>
+            </details>
+          </Information>
+        </Main>
+      </Container>
+      <span className="btn">
+        <FontAwesomeIcon
+          onClick={() => {
+            handleHistory();
+          }}
+          icon={faCircleLeft}
+          size="3x"
+          color="#749f82"
+          style={{ position: 'fixed', bottom: 20, right: 20 }}
+        />
+      </span>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  .btn {
+    svg {
+      position: fixed;
+      bottom: 20;
+      right: 20;
+    }
+
+    svg:hover {
+      cursor: pointer;
+    }
+  }
+`;
 
 const Container = styled.div`
   display: grid;
@@ -272,5 +306,11 @@ const Information = styled.div`
   li {
     margin: 10px 0;
     font-size: 17px;
+  }
+`;
+
+const navigateButton = styled.span`
+  svg:hover {
+    cursor: pointer;
   }
 `;
