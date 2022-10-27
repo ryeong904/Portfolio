@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import styles from './Project.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { TagSection } from './TagSection';
 
 const projectPreviewData = [
   {
@@ -10,6 +11,14 @@ const projectPreviewData = [
     subName: 'togefit',
     intro: '운동, 식단과 관련된 정보를 공유할 수 있는 웹 커뮤니티 사이트',
     tags: ['TypeScript', 'Node.js', 'Docker', 'AWS S3', 'Jest'],
+    category: 'Web',
+  },
+  {
+    imageUrl: 'image/spring-logo.PNG',
+    projectName: 'Togefit Migration',
+    subName: 'togefit-spring',
+    intro: '토게핏 서버를 스프링으로 재구축한 프로젝트',
+    tags: ['Java', 'Spring Boot', 'MySQL'],
     category: 'Web',
   },
   {
@@ -97,11 +106,11 @@ export function Project() {
               <div className="prev">
                 <h4>{item.projectName}</h4>
                 <p>{item.intro}</p>
-                <div className="tag-section">
+                <TagSection>
                   {item.tags.map((item) => {
                     return <span key={item}>#{item}</span>;
                   })}
-                </div>
+                </TagSection>
               </div>
             </PrjoectBox>
           </Link>
@@ -253,8 +262,6 @@ const PrjoectBox = styled.div`
     align-content: center;
     justify-content: center;
 
-    object-fit: cover;
-
     img {
       background-color: white;
       width: 65%;
@@ -279,23 +286,6 @@ const PrjoectBox = styled.div`
 
     p {
       margin: 20px 0;
-    }
-
-    .tag-section {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-
-      span {
-        font-size: 15px;
-        color: #828282;
-        font-weight: 600;
-        padding: 1px;
-
-        &:not(:last-of-type) {
-          margin-right: 5px;
-        }
-      }
     }
   }
 
