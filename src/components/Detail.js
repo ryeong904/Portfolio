@@ -338,6 +338,13 @@ const ProjectInfo = styled.div`
       width: 100%;
     }
   }
+
+  @media all and (max-width: 600px) {
+    & {
+      grid-template-columns: unset;
+      grid-template-rows: 0.3fr 1fr;
+    }
+  }
 `;
 
 const Information = styled.div`
