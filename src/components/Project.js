@@ -15,7 +15,7 @@ const projectPreviewData = [
   },
   {
     imageUrl: 'image/spring-logo.PNG',
-    projectName: 'Togefit Migration',
+    projectName: 'Togefit Refactoring',
     subName: 'togefit-spring',
     intro: '토게핏 서버를 스프링으로 재구축한 프로젝트',
     tags: ['Java', 'Spring Boot', 'MySQL'],
@@ -50,7 +50,7 @@ const projectPreviewData = [
     projectName: '그라파나 대시보드',
     subName: 'dashboard',
     intro: '한국천문연구원 인턴십 - 연구원 대시보드 따라서 제작하기',
-    tags: ['Python', 'SQLAlchemy', 'FastAPI', 'Grafana'],
+    tags: ['Python', 'SQLAlchemy', 'FastAPI', 'Grafana', 'MySQL'],
     category: 'ETC',
   },
   {
