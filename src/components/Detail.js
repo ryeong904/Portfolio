@@ -151,7 +151,7 @@ export function Detail() {
         return (
           <Container key={idx}>
             <Overview>
-              <h1>Project Name: {item.projectName}</h1>
+              <h1>{item.projectName}</h1>
               <p>{item.intro}</p>
             </Overview>
             <Main>

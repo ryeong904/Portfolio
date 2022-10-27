@@ -14,7 +14,7 @@ const projectPreviewData = [
     category: 'Web',
   },
   {
-    imageUrl: 'image/spring-logo.PNG',
+    imageUrl: 'image/spring-logo.png',
     projectName: 'Togefit Refactoring',
     subName: 'togefit-spring',
     intro: '토게핏 서버를 스프링으로 재구축한 프로젝트',
@@ -46,7 +46,7 @@ const projectPreviewData = [
     category: 'Web',
   },
   {
-    imageUrl: 'image/Grafana_logo.PNG',
+    imageUrl: 'image/Grafana_logo.png',
     projectName: '그라파나 대시보드',
     subName: 'dashboard',
     intro: '한국천문연구원 인턴십 - 연구원 대시보드 따라서 제작하기',
@@ -54,7 +54,7 @@ const projectPreviewData = [
     category: 'ETC',
   },
   {
-    imageUrl: 'image/portfolio.png',
+    imageUrl: 'image/portfolio.PNG',
     projectName: '포트폴리오 웹사이트',
     subName: 'portfolio',
     intro: '리액트로 제작한 포트폴리오',
